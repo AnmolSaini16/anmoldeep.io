@@ -26,7 +26,7 @@ const PageShell = ({ children, heading, subHeading }: Props) => {
 
       <motion.div
         className="w-full flex-grow"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",

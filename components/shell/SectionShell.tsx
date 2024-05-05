@@ -10,18 +10,16 @@ type Props = {
   children: React.ReactNode;
 };
 
-const SectionShell = ({ heading, children, ...props }: Props) => {
+const SectionShell = ({ heading, children }: Props) => {
   return (
     <motion.section
       className={cn(
         "w-full flex flex-col md:flex-row gap-2 md:gap-9 col-reverse justify-between"
       )}
-      {...props}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         ease: "easeIn",
-        duration: 0.175,
       }}
     >
       <h2 className="text-left text-muted-foreground shrink-0 w-32">

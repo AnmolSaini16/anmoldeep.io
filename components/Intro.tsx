@@ -38,11 +38,10 @@ export default function Intro() {
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",
-          delay: 0.05,
         }}
         className="max-w-lg leading-relaxed break-words text-muted-foreground"
       >
@@ -56,8 +55,9 @@ export default function Intro() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          ease: "easeIn",
-          delay: 0.05,
+          type: "spring",
+          delay: 0.1,
+          damping: 10,
         }}
       >
         {socialLinks.map((item) => (

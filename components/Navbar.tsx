@@ -21,7 +21,11 @@ export default function Navbar() {
         className="w-full flex items-center justify-between pt-8"
         initial={{ y: -200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "tween", duration: 0.5 }}
+        transition={{
+          type: "spring",
+          duration: 0.1,
+          damping: 10,
+        }}
       >
         <Link href="/" className="shrink-0">
           <svg
