@@ -19,17 +19,20 @@ export default function Contact() {
   const sendEmailPromise = async (formData: FormData) => {
     setLoading(true);
 
-    const { data, error } = await sendEmail(formData);
+    try {
+      const { error } = await sendEmail(formData);
 
-    if (error) {
-      setLoading(false);
+      if (error) {
+        throw new Error(error.message);
+      } else {
+        formRef.current?.reset();
+      }
+    } catch (error) {
       console.error(error);
-      throw new Error(error.message);
+      throw new Error();
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
-    formRef.current?.reset();
-    return data;
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,6 +46,7 @@ export default function Contact() {
       success: "Message sent successfully!",
     });
   };
+
   return (
     <PageShell
       heading="Contact me"
