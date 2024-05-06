@@ -68,7 +68,7 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="relative md:hidden">
               {navLinks.map((link) => (
-                <Link href={link.href}>
+                <Link href={link.href} key={link.label}>
                   <DropdownMenuItem
                     className={cn(
                       "text-muted-foreground",
