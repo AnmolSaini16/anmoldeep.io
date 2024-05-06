@@ -18,9 +18,9 @@ export default function Projects() {
         <h1 className="text-xl font-semibold tracking-tight text-primary">
           Some of my projects
         </h1>
-        <Button variant="link" asChild>
+        <Button variant="ghost" size="sm" asChild>
           <Link href="https://github.com/AnmolSaini16" target="_blank">
-            See more on Gihub <ArrowUpRight className="w-4 h-4 ml-1" />
+            See more on Github <ArrowUpRight className="w-4 h-4 ml-1" />
           </Link>
         </Button>
       </div>

@@ -51,7 +51,7 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center gap-1 flex-wrap"
+        className="flex items-center gap-2 flex-wrap"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -61,7 +61,13 @@ export default function Intro() {
         }}
       >
         {socialLinks.map((item) => (
-          <Button variant="ghost" asChild className="" key={item.label}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hover:md:scale-110 transition-all"
+            asChild
+            key={item.label}
+          >
             <Link href={item.href} target="_blank">
               {item.icon}
             </Link>
