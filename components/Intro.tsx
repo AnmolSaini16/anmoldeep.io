@@ -61,13 +61,7 @@ export default function Intro() {
         }}
       >
         {socialLinks.map((item) => (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="hover:md:scale-110 transition-all"
-            asChild
-            key={item.label}
-          >
+          <Button variant="ghost" size="icon" asChild key={item.label}>
             <Link href={item.href} target="_blank">
               {item.icon}
             </Link>
