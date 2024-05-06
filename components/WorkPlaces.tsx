@@ -10,7 +10,7 @@ export async function WorkPlaces() {
       <div className="space-y-8">
         <p>
           I specialize in web development, with expertise in JavaScript,
-          TypeScript, React, Next.js, Node.js, PostgreSQL, HTML, CSS, and UI/UX.
+          TypeScript, React, Next.js, Node.js, Databases, HTML, CSS, and UI/UX.
           Here are some of the places I've worked:
         </p>
         <ul className="space-y-8">

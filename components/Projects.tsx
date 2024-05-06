@@ -3,12 +3,12 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 import { projects } from "@/config";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { Badge } from "./ui/badge";
 
 export default function Projects() {

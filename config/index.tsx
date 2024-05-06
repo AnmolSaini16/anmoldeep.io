@@ -146,3 +146,10 @@ export const blogs = [
     date: "Apr 26, 2024",
   },
 ];
+
+export const siteConfig = {
+  name: "Anmoldeep Singh",
+  description:
+    "I am a Software Engineer specializing in web. I love to Build Things!",
+  url: "https://anmoldeep.vercel.app/",
+};

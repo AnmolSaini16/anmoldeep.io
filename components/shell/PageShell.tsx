@@ -1,18 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
+
+import { cn } from "@/lib/utils";
 
 type Props = {
   children: React.ReactNode;
   heading: string;
   subHeading?: string;
-};
+} & HTMLMotionProps<"div">;
 
-const PageShell = ({ children, heading, subHeading }: Props) => {
+const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
   return (
     <motion.div
-      className="space-y-10"
+      className={cn("space-y-10", props.className)}
+      {...props}
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

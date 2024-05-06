@@ -5,15 +5,23 @@ export default function About() {
     <SectionShell heading="About">
       <div className="space-y-8">
         <p>
-          Hi, I&apos;m Brian, born in Honduras and raised in Houston, Texas. I
-          have been coding for {new Date().getFullYear() - 2021} years. As a
-          software engineer, I specialize in full-stack web development and
-          product design.
+          Hey there, I&apos;m Anmol. I've been immersed in the world of coding
+          for {new Date().getFullYear() - 2021} years now. It all started during
+          my third year of college when I discovered my passion for Web
+          Development, and since then, there's been no turning back.
         </p>
 
         <p>
-          When I&apos;m not at my desk, I am probably lifting weights, playing
-          soccer, riding my e-bike, or at a local coffee shop :]
+          After pursuing my B.Tech in Computer Science and Engineering from Guru
+          Nanak Dev University in Amritsar, I've honed my skills as a software
+          engineer, specializing in full-stack web development. Crafting
+          websites and applications is not just my job; it's my calling, and I
+          pour my heart into every project I undertake.
+        </p>
+
+        <p>
+          When I&apos;m not glued to my desk, you'll likely find me at the gym,
+          cycling, reading blogs/books 😊.
         </p>
       </div>
     </SectionShell>

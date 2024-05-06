@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "permanent-marker": "var(--font-permanent-marker)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
