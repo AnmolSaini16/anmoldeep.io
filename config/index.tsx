@@ -57,7 +57,7 @@ export const socialLinks = [
   },
   {
     label: "Contact Me",
-    href: "mailto:contact@sainianmol16@gmail.com",
+    href: "mailto:sainianmol16@gmail.com",
     icon: <Mail className="w-4 h-4" />,
   },
 ];
