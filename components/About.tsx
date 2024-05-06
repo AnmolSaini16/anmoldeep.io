@@ -3,7 +3,7 @@ import SectionShell from "./shell/SectionShell";
 export default function About() {
   return (
     <SectionShell heading="About">
-      <div className="space-y-8">
+      <div className="space-y-8 leading-relaxed">
         <p>
           Hey there, I&apos;m Anmol. I've been immersed in the world of coding
           for {new Date().getFullYear() - 2021} years now. It all started during

@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Fooer";
+import Footer from "@/components/Footer";
 import { siteConfig } from "@/config";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });

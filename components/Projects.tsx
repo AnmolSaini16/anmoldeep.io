@@ -66,7 +66,7 @@ const Project = ({
     >
       <Link href={link} target="_blank">
         <Card className="w-full overflow-hidden sm:pr-8 relative sm:h-[16rem] hover:bg-zinc-100 transition sm:group-odd:pl-8 dark:hover:bg-zinc-900">
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem] space-y-2">
+          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem] space-y-1">
             <h3 className="text-xl font-semibold">{title}</h3>
             <p className="leading-relaxex text-muted-foreground">
               {description}

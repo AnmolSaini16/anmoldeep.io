@@ -8,7 +8,7 @@ export async function WorkPlaces() {
   return (
     <SectionShell heading="Work">
       <div className="space-y-8">
-        <p>
+        <p className="leading-relaxed">
           I specialize in web development, with expertise in JavaScript,
           TypeScript, React, Next.js, Node.js, Databases, HTML, CSS, and UI/UX.
           Here are some of the places I've worked:
