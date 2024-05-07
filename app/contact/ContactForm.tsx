@@ -39,8 +39,8 @@ export default function ContactForm() {
     const formData = new FormData(e.currentTarget);
 
     toast.promise(sendEmailPromise(formData), {
-      loading: "Sending...",
-      error: "Something wrent wrong",
+      loading: "Sending message...",
+      error: "Something went wrong",
       success: "Message sent successfully!",
     });
   };
