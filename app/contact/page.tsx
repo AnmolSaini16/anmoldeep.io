@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import PageShell from "@/components/shell/PageShell";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
