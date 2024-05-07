@@ -65,7 +65,7 @@ const Project = ({
       className="group mb-3 sm:mb-8 last:mb-0"
     >
       <Link href={link} target="_blank">
-        <Card className="w-full overflow-hidden sm:pr-8 relative sm:h-[16rem] transition sm:group-odd:pl-8 hover:bg-secondary/40 dark:hover:bg-secondary/20">
+        <Card className="w-full overflow-hidden sm:pr-8 relative sm:h-[16rem] transition sm:group-odd:pl-8 bg-gray-100 hover:bg-gray-200 dark:bg-primary-foreground dark:hover:bg-white/10">
           <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem] space-y-1">
             <h3 className="text-xl font-semibold">{title}</h3>
             <p className="leading-relaxex text-muted-foreground">
@@ -73,7 +73,11 @@ const Project = ({
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               {tags.map((tag, index) => (
-                <Badge variant="secondary" className="rounded-md" key={index}>
+                <Badge
+                  key={index}
+                  variant="outline"
+                  className="border border-gray-300 dark:border-gray-600"
+                >
                   {tag}
                 </Badge>
               ))}
