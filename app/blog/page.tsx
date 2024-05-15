@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <PageShell
-      heading="Blogs"
+      heading="Blog"
       subHeading="I occasionally write about programming. Stay Tuned for more!"
     >
       <div className="space-y-6">
@@ -21,9 +21,9 @@ export default function Blog() {
             <Link
               href={blog.link}
               target="_blank"
-              className="transition-all hover:underline"
+              className="w-full transition-all hover:underline"
             >
-              <p className="text-base truncate text-start">{blog.title}</p>
+              <p className="text-base truncate">{blog.title}</p>
             </Link>
           </SectionShell>
         ))}

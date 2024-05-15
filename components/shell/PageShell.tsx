@@ -33,7 +33,7 @@ const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",
-          delay: 0.1,
+          delay: 0.17,
         }}
       >
         {children}
