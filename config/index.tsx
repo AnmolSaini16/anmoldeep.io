@@ -156,7 +156,7 @@ export const projects = [
 export const blogs = [
   {
     title:
-      "Optimized Infinite Scroll with Next.js 14 Server Actions and React Query",
+      "Optimized Infinite Scroll with Next.js Server Actions and React Query",
     link: "https://medium.com/@sainianmol16/optimized-infinite-scroll-with-next-js-14-server-actions-and-react-query-f5256edc90b4?source=friends_link&sk=de6778d2cee77af4ef9d4d63ffe2ac2e",
     date: "May 15, 2024",
   },

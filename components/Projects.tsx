@@ -16,7 +16,7 @@ export default function Projects() {
     <div className="w-full">
       <div className="flex flex-row items-center justify-between pb-4">
         <h1 className="text-xl font-semibold tracking-tight text-primary">
-          Some of my projects
+          Latest Projects
         </h1>
         <Button variant="ghost" size="sm" asChild>
           <Link href="https://github.com/AnmolSaini16" target="_blank">
