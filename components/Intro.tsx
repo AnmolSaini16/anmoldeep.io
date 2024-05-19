@@ -12,7 +12,7 @@ export default function Intro() {
   return (
     <div className="space-y-4">
       <motion.div
-        initial={{ opacity: 0, y: 18 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",
@@ -28,7 +28,7 @@ export default function Intro() {
 
       <motion.h1
         className="text-3xl font-bold tracking-tight text-primary"
-        initial={{ opacity: 0, y: 18 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",
@@ -38,7 +38,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: 18 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           ease: "easeIn",

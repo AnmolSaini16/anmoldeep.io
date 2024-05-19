@@ -1,8 +1,32 @@
 "use server";
 
+import { IPost } from "@/types";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+export const getPosts = async (): Promise<IPost[] | undefined> => {
+  let postsResponse;
+  try {
+    const headers = new Headers();
+    headers.append("api-key", process.env.DEV_TO_API_KEY!);
+
+    postsResponse = await fetch("https://dev.to/api/articles/me/published", {
+      headers,
+      next: { revalidate: 1800 },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  if (postsResponse?.ok) {
+    return postsResponse.json();
+  } else {
+    console.log(
+      `HTTP Response Code: ${postsResponse?.status}, Message: ${postsResponse?.statusText}`
+    );
+  }
+};
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;

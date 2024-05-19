@@ -18,10 +18,11 @@ const SectionShell = ({ heading, children, ...props }: Props) => {
         props.className
       )}
       {...props}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         ease: "easeIn",
+        delay: 0.1,
       }}
     >
       <h2 className="text-left text-muted-foreground shrink-0 w-32">

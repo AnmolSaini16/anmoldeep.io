@@ -1,31 +1,24 @@
-import Link from "next/link";
 import { Metadata } from "next";
 
 import PageShell from "@/components/shell/PageShell";
-import SectionShell from "@/components/shell/SectionShell";
-import { blogs } from "@/config";
+import { getPosts } from "@/lib/action";
+import BlogPost from "./BlogPost";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const posts = await getPosts();
+
   return (
     <PageShell
       heading="Blog"
       subHeading="I occasionally write about programming. Stay Tuned for more!"
     >
-      <div className="space-y-6">
-        {blogs.map((blog, index) => (
-          <SectionShell heading={blog.date} key={index}>
-            <Link
-              href={blog.link}
-              target="_blank"
-              className="w-full transition-all hover:underline"
-            >
-              <p className="text-base truncate">{blog.title}</p>
-            </Link>
-          </SectionShell>
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
+        {posts?.map((post, index) => (
+          <BlogPost post={post} index={index} key={post.id} />
         ))}
       </div>
     </PageShell>

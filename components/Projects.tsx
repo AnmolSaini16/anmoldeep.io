@@ -86,21 +86,21 @@ const Project = ({
 
           <Image
             src={imageSrc}
-            alt="Project I worked on"
+            alt={title}
             quality={95}
             sizes="452px"
             className="absolute hidden sm:block top-12 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
+            transition
+            group-hover:scale-[1.04]
+            group-hover:-translate-x-3
+            group-hover:translate-y-3
+            group-hover:-rotate-2
 
-        group-odd:group-hover:translate-x-3
-        group-odd:group-hover:translate-y-3
-        group-odd:group-hover:rotate-2
+            group-odd:group-hover:translate-x-3
+            group-odd:group-hover:translate-y-3
+            group-odd:group-hover:rotate-2
 
-        group-odd:right-[initial] group-odd:-left-40"
+            group-odd:right-[initial] group-odd:-left-40"
           />
         </Card>
       </Link>
