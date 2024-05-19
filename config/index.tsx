@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import optymLogo from "@/public/work-place/optym.jpeg";
 import easyPoll from "@/public/project/easy-poll.png";
@@ -150,21 +150,6 @@ export const projects = [
     imageSrc: next14InfiniteScroll,
     tags: ["Next.Js", "Tailwind", "Server Compoenents", "React Query"],
     link: "https://github.com/AnmolSaini16/next-14-infinite-scroll",
-  },
-];
-
-export const blogs = [
-  {
-    title:
-      "Optimized Infinite Scroll with Next.js Server Actions and React Query",
-    link: "https://medium.com/@sainianmol16/optimized-infinite-scroll-with-next-js-14-server-actions-and-react-query-f5256edc90b4?source=friends_link&sk=de6778d2cee77af4ef9d4d63ffe2ac2e",
-    date: "May 15, 2024",
-  },
-  {
-    title:
-      "Why I choose Supabase as a backend service for my Next Js full stack Project",
-    link: "https://dev.to/anmolsaini16/building-a-full-stack-project-with-supabase-and-next-js-5ao8",
-    date: "Apr 26, 2024",
   },
 ];
 

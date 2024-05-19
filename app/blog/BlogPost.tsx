@@ -25,11 +25,11 @@ export default function BlogPost({
             priority={index <= 1}
           />
         ) : (
-          <ImageIcon className="h-12 w-12" />
+          <ImageIcon className="h-8 w-8" />
         )}
       </div>
 
-      <h2 className="text-lg font-extrabold">{post.title}</h2>
+      <h2 className="font-extrabold">{post.title}</h2>
       {post.description && (
         <p className="text-muted-foreground truncate">{post.description}</p>
       )}
