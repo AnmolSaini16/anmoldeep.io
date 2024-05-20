@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Eye, Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
 
 import { formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
@@ -33,18 +33,12 @@ export default function BlogPost({
       {post.description && (
         <p className="text-muted-foreground truncate">{post.description}</p>
       )}
-      <div className="flex items-center justify-between">
-        {post.published_timestamp && (
-          <p className="text-sm text-muted-foreground">
-            {formatDate(post.published_timestamp)}
-          </p>
-        )}
-        {post.page_views_count !== null && (
-          <p className="text-xs text-muted-foreground flex items-center gap-1">
-            <Eye className="w-4 h-4" /> {post.page_views_count}
-          </p>
-        )}
-      </div>
+
+      {post.published_timestamp && (
+        <p className="text-sm text-muted-foreground">
+          {formatDate(post.published_timestamp)}
+        </p>
+      )}
 
       <Link href={post.url} target="_blank" className="absolute inset-0">
         <span className="sr-only">View Article</span>
