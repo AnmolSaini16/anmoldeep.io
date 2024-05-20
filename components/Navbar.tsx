@@ -46,7 +46,7 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-primary transition-colors",
-                  link.href === path && "rounded-md text-primary bg-secondary"
+                  link.href === path && "text-primary bg-secondary"
                 )}
               >
                 {link.label}

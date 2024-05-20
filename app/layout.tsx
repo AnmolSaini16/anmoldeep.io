@@ -60,7 +60,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background antialiased",
+          "bg-background antialiased scroll-smooth",
           roboto.className,
           permanent_marker.variable
         )}
@@ -71,12 +71,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="max-w-[750px] mx-auto px-6 space-y-20">
+          <main className="flex flex-col max-w-[750px] min-h-screen mx-auto px-6 space-y-20">
             <Navbar />
 
-            <div className="flex-grow min-h-[calc(100vh-320px)]">
-              {children}
-            </div>
+            <div className="flex-grow">{children}</div>
 
             <Footer />
 
