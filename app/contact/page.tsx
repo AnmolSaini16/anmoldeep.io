@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <PageShell
-      heading="Contact me"
+      heading="Contact"
       subHeading="Got questions, feedback, or just want to say hello? I'd love to hear from you!"
     >
       <ContactForm />

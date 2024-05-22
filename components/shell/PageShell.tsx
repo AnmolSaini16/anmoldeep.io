@@ -13,14 +13,14 @@ type Props = {
 
 const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
   return (
-    <div className={cn("space-y-10", props.className)} {...props}>
+    <div className={cn("space-y-16", props.className)} {...props}>
       <motion.div
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
         className="space-y-0.5"
       >
-        <p className="font-bold text-xl">{heading}</p>
+        <h1 className="font-bold text-3xl">{heading}</h1>
         <p className="text-muted-foreground">{subHeading}</p>
       </motion.div>
 
