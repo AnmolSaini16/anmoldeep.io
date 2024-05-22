@@ -3,7 +3,7 @@ import SectionShell from "./shell/SectionShell";
 export default function About() {
   return (
     <SectionShell heading="About">
-      <div className="space-y-8 leading-relaxed">
+      <div className="space-y-6 leading-relaxed">
         <p>
           Hey there, I&apos;m Anmol. I've been immersed in the world of coding
           for {new Date().getFullYear() - 2021} years now. It all started during
@@ -12,11 +12,10 @@ export default function About() {
         </p>
 
         <p>
-          After pursuing my B.Tech in Computer Science and Engineering from Guru
-          Nanak Dev University in Amritsar, I've honed my skills as a software
-          engineer, specializing in full-stack web development. Crafting
-          websites and applications is not just my job; it's my calling, and I
-          pour my heart into every project I undertake.
+          I've honed my skills as a software engineer, specializing in
+          full-stack web development. Crafting websites and applications is not
+          just my job; it's my calling, and I pour my heart into every project I
+          undertake.
         </p>
 
         <p>

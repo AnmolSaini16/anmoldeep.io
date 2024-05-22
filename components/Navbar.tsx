@@ -72,7 +72,7 @@ export default function Navbar() {
                   <DropdownMenuItem
                     className={cn(
                       "text-primary focus:bg-transaprent",
-                      link.href === path && "text-primary bg-accent"
+                      link.href === path && "bg-accent"
                     )}
                   >
                     {link.label}

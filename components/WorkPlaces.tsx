@@ -7,7 +7,7 @@ import SectionShell from "./shell/SectionShell";
 export async function WorkPlaces() {
   return (
     <SectionShell heading="Work">
-      <div className="space-y-8">
+      <div className="space-y-6">
         <p className="leading-relaxed">
           I specialize in web development, with expertise in JavaScript,
           TypeScript, React, Next.js, Node.js, Databases, HTML, CSS, and UI/UX.
