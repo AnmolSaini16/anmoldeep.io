@@ -18,9 +18,10 @@ export default function Projects() {
         <h1 className="text-xl font-semibold tracking-tight text-primary">
           Latest Projects
         </h1>
-        <Button variant="ghost" size="sm" asChild>
+        <Button variant="ghost" size="sm" className="group" asChild>
           <Link href="https://github.com/AnmolSaini16" target="_blank">
-            See more on Github <ArrowUpRight className="w-4 h-4 ml-1" />
+            See more on Github{" "}
+            <ArrowUpRight className="w-4 h-4 ml-1 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </Button>
       </div>
