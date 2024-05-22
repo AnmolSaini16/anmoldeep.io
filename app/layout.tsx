@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Permanent_Marker, Roboto } from "next/font/google";
+import { Permanent_Marker } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
@@ -9,7 +10,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config";
 
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 const permanent_marker = Permanent_Marker({
   subsets: ["latin"],
   weight: "400",
@@ -61,7 +61,7 @@ export default function RootLayout({
       <body
         className={cn(
           "bg-background antialiased scroll-smooth min-h-screen",
-          roboto.className,
+          GeistSans.className,
           permanent_marker.variable
         )}
       >

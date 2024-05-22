@@ -2,6 +2,7 @@
 
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
+import { Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -87,8 +88,9 @@ export default function ContactForm() {
               maxLength={5000}
             />
           </div>
-          <Button className="w-fit mt-4" disabled={loading}>
+          <Button className="w-fit mt-4 group" disabled={loading}>
             Send message
+            <Send className="w-4 h-4 ml-2 opacity-80 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Button>
         </form>
       </CardContent>

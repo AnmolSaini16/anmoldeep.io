@@ -45,7 +45,7 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-primary transition-colors",
+                  "px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-primary transition-colors",
                   link.href === path && "text-primary bg-secondary"
                 )}
               >
@@ -71,8 +71,8 @@ export default function Navbar() {
                 <Link href={link.href} key={link.label}>
                   <DropdownMenuItem
                     className={cn(
-                      "text-muted-foreground",
-                      link.href === path && "text-primary"
+                      "text-muted-foreground text-primary focus:bg-transaprent",
+                      link.href === path && "text-primary bg-accent"
                     )}
                   >
                     {link.label}

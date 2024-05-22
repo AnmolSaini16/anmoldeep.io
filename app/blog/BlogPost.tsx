@@ -29,7 +29,7 @@ export default function BlogPost({
         )}
       </div>
 
-      <h2 className="font-extrabold">{post.title}</h2>
+      <h2 className="font-semibold">{post.title}</h2>
       {post.description && (
         <p className="text-muted-foreground truncate">{post.description}</p>
       )}

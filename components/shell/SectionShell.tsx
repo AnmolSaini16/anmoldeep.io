@@ -3,7 +3,7 @@
 import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { cn, inAnimation } from "@/lib/utils";
 
 type Props = {
   heading: string;
@@ -18,12 +18,9 @@ const SectionShell = ({ heading, children, ...props }: Props) => {
         props.className
       )}
       {...props}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        ease: "easeIn",
-        delay: 0.1,
-      }}
+      initial={inAnimation.initial}
+      animate={inAnimation.animate}
+      transition={inAnimation.transition}
     >
       <h2 className="text-left text-muted-foreground shrink-0 w-32">
         {heading}

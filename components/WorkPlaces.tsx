@@ -15,7 +15,7 @@ export async function WorkPlaces() {
         </p>
         <ul className="space-y-8">
           {workplaces.map((item, index) => (
-            <li className="flex w-full justify-between" key={index}>
+            <li className="flex w-full justify-between gap-2" key={index}>
               <div className="flex items-center gap-2">
                 <Avatar
                   src={item.imageSrc}
