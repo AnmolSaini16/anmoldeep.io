@@ -16,7 +16,7 @@ export default async function Blog() {
       heading="Blog"
       subHeading="I occasionally write about programming. Stay Tuned for more!"
     >
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
         {posts?.map((post, index) => (
           <BlogPost post={post} index={index} key={post.id} />
         ))}

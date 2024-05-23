@@ -13,7 +13,7 @@ type Props = {
 
 const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
   return (
-    <div className={cn("space-y-16", props.className)} {...props}>
+    <div className={cn("space-y-10 md:space-y-16", props.className)} {...props}>
       <motion.div
         initial={inAnimation.initial}
         animate={inAnimation.animate}
