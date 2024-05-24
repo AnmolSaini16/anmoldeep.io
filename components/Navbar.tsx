@@ -59,7 +59,7 @@ export default function Navbar() {
         </div>
 
         <div className="relative md:hidden">
-          <DropdownMenu modal={false}>
+          <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
