@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Image as ImageIcon } from "lucide-react";
 
 import { formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
+import { Separator } from "@/components/ui/separator";
 
 export default function BlogPost({
   post,
@@ -13,36 +13,41 @@ export default function BlogPost({
   index: number;
 }) {
   return (
-    <article className="group relative flex flex-col space-y-2">
-      <div className="relative hidden align-middle select-none items-center justify-center overflow-hidden w-full h-[150px] rounded-sm bg-secondary md:inline-flex">
-        {post?.cover_image ? (
-          <Image
-            src={post.cover_image}
-            alt={post.title}
-            className="object-cover rounded-sm"
-            sizes="335px"
-            fill
-            priority={index <= 1}
-          />
-        ) : (
-          <ImageIcon className="h-8 w-8" />
+    <>
+      <article className="group relative flex items-start justify-between gap-8">
+        <div className="space-y-1">
+          <h2 className="font-semibold text-lg">{post.title}</h2>
+          {post.description && (
+            <p className="text-muted-foreground leading-snug">
+              {post.description}
+            </p>
+          )}
+
+          {post.published_timestamp && (
+            <p className="text-sm text-muted-foreground pt-1.5">
+              {formatDate(post.published_timestamp)}
+            </p>
+          )}
+        </div>
+
+        {post?.cover_image && (
+          <div className="relative aspect-[2/1] h-24 w-48 min-w-48 border rounded-md bg-secondary shadow-sm hidden md:block">
+            <Image
+              src={post.cover_image}
+              alt={post.title}
+              className="object-cover rounded-sm"
+              sizes="198px"
+              fill
+              priority={index <= 1}
+            />
+          </div>
         )}
-      </div>
 
-      <h2 className="font-semibold">{post.title}</h2>
-      {post.description && (
-        <p className="text-muted-foreground truncate">{post.description}</p>
-      )}
-
-      {post.published_timestamp && (
-        <p className="text-sm text-muted-foreground">
-          {formatDate(post.published_timestamp)}
-        </p>
-      )}
-
-      <Link href={post.url} target="_blank" className="absolute inset-0">
-        <span className="sr-only">View Article</span>
-      </Link>
-    </article>
+        <Link href={post.url} target="_blank" className="absolute inset-0">
+          <span className="sr-only">View Article</span>
+        </Link>
+      </article>
+      <Separator className="last:hidden" />
+    </>
   );
 }
