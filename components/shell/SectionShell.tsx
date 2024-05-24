@@ -10,12 +10,12 @@ type Props = {
   children: React.ReactNode;
 } & HTMLMotionProps<"section">;
 
-const SectionShell = ({ heading, children, ...props }: Props) => {
+const SectionShell = ({ heading, children, className, ...props }: Props) => {
   return (
     <motion.section
       className={cn(
         "w-full flex flex-col md:flex-row gap-2 md:gap-9 col-reverse justify-between",
-        props.className
+        className
       )}
       {...props}
       initial={inAnimation.initial}

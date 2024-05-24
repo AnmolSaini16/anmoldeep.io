@@ -11,9 +11,15 @@ type Props = {
   subHeading?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
+const PageShell = ({
+  children,
+  heading,
+  subHeading,
+  className,
+  ...props
+}: Props) => {
   return (
-    <div className={cn("space-y-10 md:space-y-16", props.className)} {...props}>
+    <div className={cn("space-y-10 md:space-y-16", className)} {...props}>
       <motion.div
         initial={inAnimation.initial}
         animate={inAnimation.animate}
@@ -21,7 +27,7 @@ const PageShell = ({ children, heading, subHeading, ...props }: Props) => {
         className="space-y-0.5"
       >
         <h1 className="font-bold text-3xl">{heading}</h1>
-        <p className="text-muted-foreground">{subHeading}</p>
+        {subHeading && <p className="text-muted-foreground">{subHeading}</p>}
       </motion.div>
 
       <motion.div
