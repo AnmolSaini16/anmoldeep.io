@@ -35,7 +35,7 @@ export default function BlogPost({
             <Image
               src={post.cover_image}
               alt={post.title}
-              className="object-cover rounded-sm"
+              className="object-cover rounded-md"
               sizes="198px"
               fill
               priority={index <= 1}
