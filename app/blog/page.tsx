@@ -16,7 +16,7 @@ export default async function Blog() {
       heading="Blog"
       subHeading="I occasionally write about programming. Stay Tuned for more!"
     >
-      <div className="flex flex-col gap-6 md:gap-8">
+      <div className="flex flex-col gap-4 md:gap-6">
         {posts?.map((post, index) => (
           <BlogPost post={post} index={index} key={post.id} />
         ))}

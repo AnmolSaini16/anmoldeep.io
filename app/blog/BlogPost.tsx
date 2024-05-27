@@ -16,7 +16,7 @@ export default function BlogPost({
     <>
       <article className="group relative flex items-start justify-between gap-8">
         <div className="space-y-1">
-          <h2 className="font-semibold text-lg">{post.title}</h2>
+          <h2 className="font-semibold md:text-lg">{post.title}</h2>
           {post.description && (
             <p className="text-muted-foreground leading-snug">
               {post.description}
