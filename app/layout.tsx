@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Permanent_Marker } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
-import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
+
+import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -80,6 +82,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
