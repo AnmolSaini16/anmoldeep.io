@@ -24,6 +24,7 @@ const PageShell = ({
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
+        className="space-y-1.5"
       >
         <h1 className="font-bold text-3xl">{heading}</h1>
         {subHeading && <p className="text-muted-foreground">{subHeading}</p>}

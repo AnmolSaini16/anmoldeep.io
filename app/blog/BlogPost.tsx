@@ -13,18 +13,17 @@ export default function BlogPost({
 }) {
   return (
     <>
-      <article className="group relative flex items-start justify-between gap-8">
+      <article className="group relative flex items-start justify-between gap-6">
         <div className="space-y-0.5 min-w-0">
+          {post.published_timestamp && (
+            <p className="text-sm text-muted-foreground pb-1">
+              {formatDate(post.published_timestamp)}
+            </p>
+          )}
           <h2 className="font-semibold">{post.title}</h2>
           {post.description && (
             <p className="text-muted-foreground leading-snug truncate">
               {post.description}
-            </p>
-          )}
-
-          {post.published_timestamp && (
-            <p className="text-sm text-muted-foreground pt-1">
-              {formatDate(post.published_timestamp)}
             </p>
           )}
         </div>
