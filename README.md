@@ -24,3 +24,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## License
+* You are free to use this code.
+* Please do not copy my personal information directly.
+* Crediting the author is appreciated.
