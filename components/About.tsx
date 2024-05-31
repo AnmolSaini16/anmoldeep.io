@@ -5,9 +5,9 @@ export default function About() {
     <SectionShell heading="About">
       <div className="space-y-6 leading-relaxed">
         <p>
-          Hey there, I&apos;m Anmol. I've been immersed in the world of coding
-          for {new Date().getFullYear() - 2021} years now. It all started during
-          my third year of college when I discovered my passion for Web
+          I've been immersed in the world of coding for{" "}
+          {new Date().getFullYear() - 2021} years now. It all started during my
+          third year of college when I discovered my passion for Web
           Development, and since then, there's been no turning back.
         </p>
 

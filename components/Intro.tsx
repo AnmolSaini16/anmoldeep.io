@@ -30,12 +30,12 @@ export default function Intro() {
       </motion.div>
 
       <motion.h1
-        className="text-3xl font-bold tracking-tight text-primary"
+        className="text-2xl md:text-3xl font-bold tracking-tight text-primary"
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
       >
-        Anmoldeep Singh
+        Hey, I'm Anmoldeep Singh 👋
       </motion.h1>
 
       <motion.p
@@ -44,9 +44,9 @@ export default function Intro() {
         transition={inAnimation.transition}
         className="max-w-lg leading-relaxed break-words text-muted-foreground"
       >
-        Hello! I'm a software engineer with a passion for building web
-        applications. I thrive on creating meaningful experiences through code
-        and love bringing ideas to life!
+        I'm a software engineer with a passion for building web applications. I
+        thrive on creating meaningful experiences through code and love bringing
+        ideas to life!
       </motion.p>
 
       <motion.div
