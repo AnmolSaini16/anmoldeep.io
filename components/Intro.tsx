@@ -43,7 +43,7 @@ export default function Intro() {
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
-        className="max-w-lg leading-relaxed break-words text-muted-foreground"
+        className="leading-relaxed break-words text-muted-foreground"
       >
         I'm a software engineer with a passion for building web applications. I
         thrive on creating meaningful experiences through code and love bringing
@@ -51,7 +51,7 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center flex-wrap gap-2"
+        className="flex items-center flex-wrap gap-2 pt-2"
         initial={{ x: -150, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 0.8 }}

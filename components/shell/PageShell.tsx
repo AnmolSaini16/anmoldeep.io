@@ -19,7 +19,7 @@ const PageShell = ({
   ...props
 }: Props) => {
   return (
-    <div className={cn("space-y-12", className)} {...props}>
+    <div className={cn("space-y-14", className)} {...props}>
       <motion.div
         initial={inAnimation.initial}
         animate={inAnimation.animate}

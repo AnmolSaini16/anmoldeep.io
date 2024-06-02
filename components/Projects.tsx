@@ -12,7 +12,7 @@ import { Badge } from "./ui/badge";
 
 export default function Projects() {
   return (
-    <div className="w-full pb-10">
+    <div className="w-full pb-16">
       <div className="flex flex-row items-center justify-between pb-6">
         <Link
           href="https://github.com/AnmolSaini16"
