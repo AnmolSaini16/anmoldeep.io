@@ -79,7 +79,7 @@ export const socialLinks = [
 
 export const workplaces = [
   {
-    title: "Software Enginner",
+    title: "Software Engineer",
     company: "Optym",
     time: "July, 2022 - Present",
     imageSrc: optymLogo,
