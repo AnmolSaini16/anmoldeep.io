@@ -73,7 +73,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col max-w-[750px] min-h-screen mx-auto px-6 space-y-16 md:space-y-20">
+          <div className="flex flex-col max-w-[720px] min-h-screen mx-auto px-6 space-y-16 md:space-y-20">
             <Navbar />
 
             <main className="flex-grow">{children}</main>

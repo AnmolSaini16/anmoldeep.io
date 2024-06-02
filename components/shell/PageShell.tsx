@@ -26,7 +26,9 @@ const PageShell = ({
         transition={inAnimation.transition}
         className="space-y-0.5"
       >
-        <h1 className="font-bold text-2xl md:text-3xl">{heading}</h1>
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-primary">
+          {heading}
+        </h1>
         {subHeading && <p className="text-muted-foreground">{subHeading}</p>}
       </motion.div>
 

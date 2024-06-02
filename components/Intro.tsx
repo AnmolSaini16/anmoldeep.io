@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 import profilePic from "@/public/profile.png";
 
@@ -30,12 +31,12 @@ export default function Intro() {
       </motion.div>
 
       <motion.h1
-        className="text-2xl md:text-3xl font-bold tracking-tight text-primary"
+        className="text-2xl md:text-3xl font-semibold tracking-tight text-primary"
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
       >
-        Hey, I'm Anmoldeep Singh 👋
+        hey, I'm Anmoldeep Singh 👋
       </motion.h1>
 
       <motion.p
@@ -50,15 +51,23 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center gap-2 flex-wrap"
+        className="flex items-center flex-wrap gap-2"
         initial={{ x: -150, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 0.8 }}
       >
         {socialLinks.map((item) => (
-          <Button variant="ghost" size="icon" asChild key={item.label}>
+          <Button
+            variant="secondary"
+            size="xs"
+            asChild
+            key={item.label}
+            className="group gap-1.5 rounded-full font-normal"
+          >
             <Link href={item.href} target="_blank">
               {item.icon}
+              {item.label}
+              <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
             </Link>
           </Button>
         ))}

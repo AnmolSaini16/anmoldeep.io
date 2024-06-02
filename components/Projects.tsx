@@ -7,23 +7,21 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 import { projects } from "@/config";
-import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 export default function Projects() {
   return (
-    <div className="w-full">
-      <div className="flex flex-row items-center justify-between pb-4">
-        <h1 className="text-xl font-semibold tracking-tight text-primary">
-          Latest Projects
-        </h1>
-        <Button variant="ghost" size="sm" className="group" asChild>
-          <Link href="https://github.com/AnmolSaini16" target="_blank">
-            See more on Github{" "}
-            <ArrowUpRight className="w-4 h-4 ml-1 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-        </Button>
+    <div className="w-full pb-10">
+      <div className="flex flex-row items-center justify-between pb-6">
+        <Link
+          href="https://github.com/AnmolSaini16"
+          className="group flex items-center gap-2 text-muted-foreground"
+          target="_blank"
+        >
+          Latest projects
+          <ArrowUpRight className="w-5 h-5 transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
+        </Link>
       </div>
       <div className="space-y-8">
         {projects.map((project) => (
@@ -63,11 +61,11 @@ const Project = ({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 md:mb-8 last:mb-0"
     >
       <Link href={link} target="_blank">
-        <Card className="w-full overflow-hidden sm:pr-8 relative sm:h-[16rem] transition sm:group-odd:pl-8 bg-gray-100 hover:bg-gray-200 dark:bg-primary-foreground dark:hover:bg-white/10">
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem] space-y-1">
+        <Card className="w-full overflow-hidden md:pr-8 relative md:min-h-[16rem] transition md:group-odd:pl-8 bg-gray-100 hover:bg-gray-200 dark:bg-primary-foreground dark:hover:bg-white/10">
+          <div className="pt-4 pb-7 px-5 md:pl-10 md:pr-2 md:pt-10 md:max-w-[50%] flex flex-col h-full md:group-odd:ml-[18rem] space-y-1">
             <h3 className="text-xl font-semibold">{title}</h3>
             <p className="leading-relaxex text-muted-foreground">
               {description}
@@ -90,7 +88,7 @@ const Project = ({
             alt={title}
             quality={95}
             sizes="452px"
-            className="absolute hidden sm:block top-12 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+            className="absolute hidden md:block top-12 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
             transition
             group-hover:scale-[1.04]
             group-hover:-translate-x-3
