@@ -2,9 +2,18 @@ import { redirect } from "next/navigation";
 import { Metadata } from "next";
 
 import PostContentShell from "@/components/shell/PostContentShell";
-import { getPostContent } from "@/lib/action";
+import { getPostContent, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";
+
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return (
+    posts?.map((post) => ({
+      params: { id: post.id.toString() },
+    })) ?? []
+  );
+}
 
 export async function generateMetadata({
   params,
