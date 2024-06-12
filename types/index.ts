@@ -16,6 +16,8 @@ export type IPost = {
   created_at: string;
   edited_at: string;
   tag_list: string[];
+  tags: string[];
+  body_markdown: string;
   user: {
     name: string;
     username: string;

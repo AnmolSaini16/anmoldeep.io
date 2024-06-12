@@ -28,6 +28,31 @@ export const getPosts = async (): Promise<IPost[] | undefined> => {
   }
 };
 
+export const getPostContent = async (
+  id: string
+): Promise<IPost | undefined> => {
+  let postsResponse;
+  try {
+    const headers = new Headers();
+    headers.append("api-key", process.env.DEV_TO_API_KEY!);
+
+    postsResponse = await fetch("https://dev.to/api/articles/" + id, {
+      headers,
+      next: { revalidate: 1800 },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  if (postsResponse?.ok) {
+    return postsResponse.json();
+  } else {
+    console.log(
+      `HTTP Response Code: ${postsResponse?.status}, Message: ${postsResponse?.statusText}`
+    );
+  }
+};
+
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;
   const senderName = formData.get("senderName");
