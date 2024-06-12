@@ -38,7 +38,6 @@ export const getPostContent = async (
 
     postsResponse = await fetch("https://dev.to/api/articles/" + id, {
       headers,
-      next: { revalidate: 1800 },
     });
   } catch (error) {
     console.log(error);

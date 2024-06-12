@@ -19,7 +19,6 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const PostContentShell = ({ children, post, className, ...props }: Props) => {
-  console.log(post?.cover_image);
   return (
     <div className={cn("space-y-10", className)} {...props}>
       <Breadcrumb>
