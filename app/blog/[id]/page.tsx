@@ -10,7 +10,7 @@ export async function generateStaticParams() {
   const posts = await getPosts();
   return (
     posts?.map((post) => ({
-      params: { id: post.id.toString() },
+      id: post.id.toString(),
     })) ?? []
   );
 }
