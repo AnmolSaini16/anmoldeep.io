@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +73,7 @@ export default function RootLayout({
 
             <Footer />
           </div>
+          <ScrollToTop />
         </ThemeProvider>
         <Toaster />
         <Analytics />

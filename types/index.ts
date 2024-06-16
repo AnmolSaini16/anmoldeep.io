@@ -18,6 +18,7 @@ export type IPost = {
   tag_list: string[];
   tags: string[];
   body_markdown: string;
+  reading_time_minutes: number;
   user: {
     name: string;
     username: string;
