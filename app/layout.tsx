@@ -42,9 +42,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
-  icons: {
-    icon: "/icon.tsx",
-  },
 };
 
 export default function RootLayout({

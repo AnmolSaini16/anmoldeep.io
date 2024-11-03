@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+
 export const metadata: Metadata = {
   title: "Not found",
 };
@@ -19,8 +21,9 @@ const Custom404 = (): JSX.Element => (
       </a>
     </p>
     <p className="text-muted-foreground">Uh oh! This page does not exists.</p>
-    <Link href="/" className="underline">
-      Return home
+
+    <Link href="/" className="underline" passHref>
+      <Button variant="ghost">Return home</Button>
     </Link>
   </div>
 );
