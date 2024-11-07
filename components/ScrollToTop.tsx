@@ -37,7 +37,7 @@ export default function ScrollToTop() {
         <Button
           size="icon"
           variant="outline"
-          className="fixed bottom-5 right-5 bg-background/75"
+          className="fixed bottom-20 right-5 bg-background/75"
           onClick={scrollToTop}
         >
           <ChevronUp />

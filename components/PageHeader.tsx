@@ -11,7 +11,7 @@ type Props = {
   subHeading?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const PageShell = ({
+const PageHeader = ({
   children,
   heading,
   subHeading,
@@ -19,12 +19,12 @@ const PageShell = ({
   ...props
 }: Props) => {
   return (
-    <div className={cn("space-y-14", className)} {...props}>
+    <section className={cn("space-y-14", className)} {...props}>
       <motion.div
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
-        className="space-y-0.5"
+        className="space-y-1"
       >
         <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-primary">
           {heading}
@@ -40,8 +40,8 @@ const PageShell = ({
       >
         {children}
       </motion.div>
-    </div>
+    </section>
   );
 };
 
-export default PageShell;
+export default PageHeader;

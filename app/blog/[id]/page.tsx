@@ -1,10 +1,11 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-import PostContentShell from "@/components/shell/PostContentShell";
+import PostContentShell from "@/components/PostContentShell";
 import { getPostContent, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";
+import { Shell } from "@/components/Shell";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -41,12 +42,14 @@ export default async function PostContentPage({
   const post: IPost | undefined = await getPostContent(id);
 
   if (!post) {
-    return redirect("/404");
+    return notFound();
   }
 
   return (
-    <PostContentShell post={post}>
-      <MarkdownComponent>{post.body_markdown}</MarkdownComponent>
-    </PostContentShell>
+    <Shell className="max-w-[700px]">
+      <PostContentShell post={post}>
+        <MarkdownComponent>{post.body_markdown}</MarkdownComponent>
+      </PostContentShell>
+    </Shell>
   );
 }

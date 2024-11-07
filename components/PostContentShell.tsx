@@ -3,17 +3,17 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 import { cn, formatDate } from "@/lib/utils";
+import { IPost } from "@/types";
 import {
   Breadcrumb,
-  BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
+  BreadcrumbList,
   BreadcrumbPage,
-} from "../ui/breadcrumb";
-import { Badge } from "../ui/badge";
-import { IPost } from "@/types";
-import { Button } from "../ui/button";
+  BreadcrumbSeparator,
+} from "./ui/breadcrumb";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 type Props = {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ type Props = {
 
 const PostContentShell = ({ children, post, className, ...props }: Props) => {
   return (
-    <div className={cn("space-y-10", className)} {...props}>
+    <section className={cn("space-y-10", className)} {...props}>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -42,7 +42,7 @@ const PostContentShell = ({ children, post, className, ...props }: Props) => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{post.title.slice(0, 20) + " ..."}</BreadcrumbPage>
+            <BreadcrumbPage>{post.title.slice(0, 30) + " ..."}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -88,7 +88,7 @@ const PostContentShell = ({ children, post, className, ...props }: Props) => {
         )}
       </div>
 
-      <div>{children}</div>
+      <article>{children}</article>
 
       <div>
         <Button
@@ -103,7 +103,7 @@ const PostContentShell = ({ children, post, className, ...props }: Props) => {
           </Link>
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,8 +1,8 @@
-import SectionShell from "./shell/SectionShell";
+import Section from "./Section";
 
 export default function About() {
   return (
-    <SectionShell heading="About">
+    <Section heading="About">
       <div className="space-y-6 leading-relaxed">
         <p>
           I've been immersed in the world of coding for{" "}
@@ -23,6 +23,6 @@ export default function About() {
           cycling, reading blogs/books 😊.
         </p>
       </div>
-    </SectionShell>
+    </Section>
   );
 }

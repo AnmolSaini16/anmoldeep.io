@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BookText, Home, Menu, SquareUser } from "lucide-react";
+import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
@@ -16,18 +16,18 @@ import {
 import { Button } from "./ui/button";
 
 const navLinks = [
-  { label: "Home", href: "/", icon: Home },
-  { label: "Blog", href: "/blog", icon: BookText },
-  { label: "Contact", href: "/contact", icon: SquareUser },
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="z-[999]">
+    <header className="h-20 md:h-24 z-[999]">
       <motion.nav
-        className="w-full flex items-center justify-between pt-4 md:pt-8"
+        className="container max-w-3xl w-full h-full flex items-center justify-between"
         initial={{ y: -200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -42,50 +42,44 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "px-2.5 py-1.5 rounded-lg text-sm text-muted-foreground flex items-center hover:text-primary transition-colors",
+                  "px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-primary transition-all",
                   link.href === path && "text-primary bg-secondary"
                 )}
               >
-                <link.icon className="w-4 h-4 mr-2" />
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="relative md:hidden">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">More</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              side="bottom"
-              align="start"
-              className="relative md:hidden"
-            >
-              {navLinks.map((link) => (
-                <Link href={link.href} key={link.label}>
-                  <DropdownMenuItem
-                    className={cn(
-                      "text-primary text-base focus:bg-transaprent flex items-center gap-2",
-                      link.href === path && "bg-accent"
-                    )}
-                  >
-                    <link.icon className="w-4 h-4" />
-                    {link.label}
-                  </DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild className="relative md:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">More</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            side="bottom"
+            align="start"
+            className="relative md:hidden"
+          >
+            {navLinks.map((link) => (
+              <Link href={link.href} key={link.label} passHref>
+                <DropdownMenuItem
+                  className={cn(
+                    "text-primary focus:bg-transaprent",
+                    link.href === path && "bg-accent"
+                  )}
+                >
+                  {link.label}
+                </DropdownMenuItem>
+              </Link>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
 
-        <div>
-          <ThemeSwitcher />
-        </div>
+        <ThemeSwitcher />
       </motion.nav>
     </header>
   );

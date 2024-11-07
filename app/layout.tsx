@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,21 +19,23 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "nextjs",
-    "react",
-    "react server components",
-    "framer motion",
-    "tailwind",
-    "shadcn",
-    "resend",
+    "Software Engineer",
+    "Web Developer",
+    "Frontend Development",
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Web Animation",
+    "Open Source",
+    "Portfolio",
   ],
   authors: [
     {
-      name: "anmol",
+      name: siteConfig.name,
       url: "https://github.com/AnmolSaini16",
     },
   ],
-  creator: "anmol",
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -41,6 +43,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+  },
+  icons: {
+    icon: "/icon?<generated>",
   },
 };
 
@@ -63,7 +68,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col max-w-[700px] min-h-screen mx-auto px-6 space-y-16 md:space-y-20">
+          <div className="flex flex-col min-h-screen">
             <Navbar />
 
             <main className="flex-grow">{children}</main>

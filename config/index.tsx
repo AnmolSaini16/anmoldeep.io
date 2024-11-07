@@ -84,6 +84,8 @@ export const workplaces = [
     time: "July, 2022 - Present",
     imageSrc: optymLogo,
     link: "https://optym.com/",
+    description:
+      "Responsible for feature design and development, ensuring coding standards and cross-team collaboration. Led high-quality UI delivery, leveraging SSR to improve performance by 40% while contributing to backend development. Stack:  JavaScript, TypeScript, React Js, Next JS, Nest Js, PostgreSQL, Material UI, Azure DevOps, Jira.",
   },
   {
     title: "Software Engineer Intern",
@@ -91,6 +93,8 @@ export const workplaces = [
     time: "May, 2022 - July, 2022",
     imageSrc: optymLogo,
     link: "https://optym.com/",
+    description:
+      "Responsible for development of UI and front-end features, refactored and reduced complexity of multiple code files using JavaScript, TypeScript, React, Next Js, Material UI, Azure DevOps.",
   },
 ];
 

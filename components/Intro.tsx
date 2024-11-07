@@ -21,11 +21,12 @@ export default function Intro() {
           type: "tween",
           duration: 0.3,
         }}
+        className="pb-4"
       >
         <Avatar
           src={profilePic}
           alt="Anmoldeep Singh"
-          size="lg"
+          size="xl"
           sizes="112px"
         />
       </motion.div>
@@ -36,7 +37,7 @@ export default function Intro() {
         animate={inAnimation.animate}
         transition={inAnimation.transition}
       >
-        hey, I'm Anmoldeep Singh 👋
+        Hey, I'm Anmoldeep Singh 👋
       </motion.h1>
 
       <motion.p

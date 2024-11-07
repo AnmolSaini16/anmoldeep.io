@@ -9,26 +9,22 @@ import { useRef } from "react";
 import { projects } from "@/config";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
+import Section from "./Section";
 
 export default function Projects() {
   return (
-    <div className="w-full pb-16">
-      <div className="flex flex-row items-center justify-between pb-6">
-        <Link
-          href="https://github.com/AnmolSaini16"
-          className="group flex items-center gap-2 text-muted-foreground"
-          target="_blank"
-        >
-          Latest projects
-          <ArrowUpRight className="w-5 h-5 transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
-        </Link>
-      </div>
-      <div className="space-y-8">
+    <Section
+      heading="Latest Projects"
+      linkText="View All"
+      href="https://github.com/AnmolSaini16"
+      showActionBtn
+    >
+      <div>
         {projects.map((project) => (
           <Project {...project} key={project.title} />
         ))}
       </div>
-    </div>
+    </Section>
   );
 }
 
