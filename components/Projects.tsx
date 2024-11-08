@@ -57,7 +57,7 @@ const Project = ({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="group mb-3 md:mb-8 last:mb-0"
+      className="group mb-3 md:mb-8 last:mb-10"
     >
       <Link href={link} target="_blank">
         <Card className="w-full overflow-hidden md:pr-8 relative md:min-h-[16rem] transition md:group-odd:pl-8 bg-gray-100 hover:bg-gray-200 dark:bg-primary-foreground dark:hover:bg-white/10">

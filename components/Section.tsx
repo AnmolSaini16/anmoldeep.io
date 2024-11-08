@@ -34,7 +34,7 @@ const Section = ({
       transition={inAnimation.transition}
     >
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-left text-muted-foreground text-lg md:text-xl font-semibold tracking-tight shrink-0 leading-[1.1]">
+        <h2 className="text-left text-muted-foreground text-lg md:text-xl font-medium tracking-tight shrink-0 leading-[1.1]">
           {heading}
         </h2>
 

@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [`${siteConfig.url}/og.png`],
   },
   icons: {
     icon: "/icon?<generated>",
