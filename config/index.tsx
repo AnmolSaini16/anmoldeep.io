@@ -160,5 +160,5 @@ export const siteConfig = {
   name: "Anmoldeep Singh",
   description:
     "I am a Software Engineer specializing in web. I love to Build Things!",
-  url: "https://anmoldeep.vercel.app/",
+  url: "https://anmoldeep.vercel.app",
 };
