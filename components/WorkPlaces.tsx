@@ -15,7 +15,7 @@ export async function WorkPlaces() {
           TypeScript, React, Next.js, Node.js, Databases, HTML, CSS, and UI/UX.
           Here are some of the places I've worked:
         </p>
-        <ul className="space-y-10">
+        <ul className="space-y-8">
           {workplaces.map((item, index) => (
             <WorkPlace
               key={index}

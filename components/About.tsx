@@ -3,7 +3,7 @@ import Section from "./Section";
 export default function About() {
   return (
     <Section heading="About">
-      <div className="space-y-6 leading-relaxed">
+      <div className="space-y-4 leading-relaxed">
         <p>
           I've been immersed in the world of coding for{" "}
           {new Date().getFullYear() - 2021} years now. It all started during my
