@@ -65,16 +65,16 @@ export default function Navbar() {
             className="relative md:hidden"
           >
             {navLinks.map((link) => (
-              <Link href={link.href} key={link.label} passHref>
-                <DropdownMenuItem
-                  className={cn(
-                    "text-primary focus:bg-transaprent",
-                    link.href === path && "bg-accent"
-                  )}
-                >
-                  {link.label}
-                </DropdownMenuItem>
-              </Link>
+              <DropdownMenuItem
+                className={cn(
+                  "text-primary focus:bg-transaprent",
+                  link.href === path && "bg-accent"
+                )}
+                key={link.label}
+                asChild
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>

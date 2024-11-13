@@ -27,17 +27,13 @@ const PostContentShell = ({ children, post, className, ...props }: Props) => {
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/" passHref>
-                Home
-              </Link>
+              <Link href="/">Home</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/blog" passHref>
-                Blog
-              </Link>
+              <Link href="/blog">Blog</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />

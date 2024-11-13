@@ -24,9 +24,9 @@ const Custom404 = (): JSX.Element => (
       </p>
       <p className="text-muted-foreground">Uh oh! This page does not exists.</p>
 
-      <Link href="/" className="underline" passHref>
-        <Button variant="ghost">Return home</Button>
-      </Link>
+      <Button variant="ghost" asChild>
+        <Link href="/">Return home</Link>
+      </Button>
     </div>
   </Shell>
 );
