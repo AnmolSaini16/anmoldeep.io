@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -26,16 +25,7 @@ export default function Navbar() {
 
   return (
     <header className="h-20 md:h-24 z-[999]">
-      <motion.nav
-        className="container max-w-3xl w-full h-full flex items-center justify-between"
-        initial={{ y: -200, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          type: "spring",
-          duration: 0.1,
-          damping: 10,
-        }}
-      >
+      <nav className="container max-w-[700px] w-full h-full flex items-center justify-between">
         <ul className="items-center gap-4 relative hidden md:flex">
           {navLinks.map((link) => (
             <li key={link.label}>
@@ -62,7 +52,7 @@ export default function Navbar() {
           <DropdownMenuContent
             side="bottom"
             align="start"
-            className="relative md:hidden"
+            className="space-y-1 relative md:hidden"
           >
             {navLinks.map((link) => (
               <DropdownMenuItem
@@ -80,7 +70,7 @@ export default function Navbar() {
         </DropdownMenu>
 
         <ThemeSwitcher />
-      </motion.nav>
+      </nav>
     </header>
   );
 }

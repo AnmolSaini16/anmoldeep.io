@@ -60,8 +60,8 @@ const WorkPlace = ({
         {!isLast && <Separator orientation="vertical" />}
       </div>
 
-      <div className="">
-        <div className="flex items-center justify-between gap-2">
+      <div>
+        <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-1">
           <h1 className="text-lg font-semibold">{title}</h1>
           <p className="text-xs uppercase text-muted-foreground">{time}</p>
         </div>
@@ -73,7 +73,7 @@ const WorkPlace = ({
         >
           {company}
         </Link>
-        <p className="text-sm text-muted-foreground leading-normal mt-1">
+        <p className="text-muted-foreground mt-1.5 leading-relaxed">
           {description}
         </p>
       </div>
