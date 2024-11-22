@@ -11,10 +11,10 @@ type Props = {
   subHeading?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const PageHeader = ({
-  children,
+const PageSection = ({
   heading,
   subHeading,
+  children,
   className,
   ...props
 }: Props) => {
@@ -44,4 +44,4 @@ const PageHeader = ({
   );
 };
 
-export default PageHeader;
+export default PageSection;

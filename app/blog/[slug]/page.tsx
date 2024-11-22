@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-import PostContentShell from "@/components/PostContentShell";
-import { getPostContent, getPosts } from "@/lib/action";
+import PostSection from "@/components/PostSection";
+import { getPost, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";
 import { Shell } from "@/components/Shell";
@@ -19,27 +19,31 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: { slug: string };
 }): Promise<Metadata> {
-  const post: IPost | undefined = await getPostContent(params.id);
+  const post: IPost | undefined = await getPost(params.slug);
 
   if (!post) {
-    return {};
+    return {
+      title: "Page Not Found",
+      description: "The page you are looking for does not exist.",
+    };
   }
 
   return {
     title: post.title,
+    description: post.description,
   };
 }
 
 export default async function PostContentPage({
   params,
 }: {
-  params: { id: string };
+  params: { slug: string };
 }) {
-  const { id } = params;
+  const { slug } = params;
 
-  const post: IPost | undefined = await getPostContent(id);
+  const post: IPost | undefined = await getPost(slug);
 
   if (!post) {
     return notFound();
@@ -47,9 +51,9 @@ export default async function PostContentPage({
 
   return (
     <Shell className="max-w-[700px]">
-      <PostContentShell post={post}>
+      <PostSection post={post}>
         <MarkdownComponent>{post.body_markdown}</MarkdownComponent>
-      </PostContentShell>
+      </PostSection>
     </Shell>
   );
 }

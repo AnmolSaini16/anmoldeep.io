@@ -20,7 +20,7 @@ type Props = {
   post: IPost;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const PostContentShell = ({ children, post, className, ...props }: Props) => {
+const PostSection = ({ children, post, className, ...props }: Props) => {
   return (
     <section className={cn("space-y-10", className)} {...props}>
       <Breadcrumb>
@@ -103,4 +103,4 @@ const PostContentShell = ({ children, post, className, ...props }: Props) => {
   );
 };
 
-export default PostContentShell;
+export default PostSection;

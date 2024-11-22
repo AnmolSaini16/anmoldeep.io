@@ -1,21 +1,24 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 import { formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
 
 export default function BlogPost({ post }: { post: IPost }) {
   return (
-    <article className="group relative">
+    <article className="relative flex flex-col gap-1">
+      <h1 className="font-semibold text-lg flex-grow">{post.title}</h1>
+      <p className="text-muted-foreground line-clamp-1">{post.description}</p>
       {post.published_timestamp && (
-        <p className="text-sm text-muted-foreground pb-1 flex items-center gap-1">
+        <p className="text-sm text-muted-foreground">
           {formatDate(post.published_timestamp)}
-          <ArrowRight className="opacity-0 sm:group-hover:opacity-100 transition-opacity ease-in-out duration-200 text-primary w-4 h-4" />
         </p>
       )}
-      <h2 className="font-semibold">{post.title}</h2>
 
-      <Link href={"/blog/" + post?.id} className="absolute inset-0">
+      <Link
+        href={`/blog/${post.slug}`}
+        className="absolute inset-0"
+        aria-label={`View ${post.title}`}
+      >
         <span className="sr-only">View Article</span>
       </Link>
     </article>

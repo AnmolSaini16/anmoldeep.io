@@ -13,6 +13,7 @@ import { siteConfig } from "@/config";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
+  applicationName: siteConfig.name,
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -22,12 +23,9 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Web Developer",
     "Frontend Development",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Web Animation",
     "Open Source",
     "Portfolio",
+    "Blogs",
   ],
   authors: [
     {
@@ -43,9 +41,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-  },
-  icons: {
-    icon: "/icon?<generated>",
   },
 };
 

@@ -25,7 +25,7 @@ export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-20 md:h-24 z-[999]">
+    <header className="h-16 md:h-20 z-[999]">
       <nav className="container max-w-[700px] w-full h-full flex items-center justify-between">
         <ul className="items-center gap-4 relative hidden md:flex">
           {navLinks.map((link) => (

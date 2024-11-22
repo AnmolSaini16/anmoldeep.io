@@ -1,9 +1,11 @@
+import React from "react";
 import { Metadata } from "next";
 
-import PageHeader from "@/components/PageHeader";
+import PageSection from "@/components/PageSection";
 import { getPosts } from "@/lib/action";
 import BlogPost from "./BlogPost";
 import { Shell } from "@/components/Shell";
+import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -14,16 +16,19 @@ export default async function Blog() {
 
   return (
     <Shell className="max-w-[700px]">
-      <PageHeader
+      <PageSection
         heading="Blog"
         subHeading="I occasionally write about programming. Stay Tuned for more!"
       >
-        <div className="flex flex-col gap-6">
-          {posts?.map((post) => (
-            <BlogPost post={post} key={post.id} />
+        <div className="flex flex-col">
+          {posts?.map((post, index) => (
+            <React.Fragment key={post.id}>
+              <BlogPost post={post} />
+              {index !== posts.length - 1 && <Separator className="my-6" />}
+            </React.Fragment>
           ))}
         </div>
-      </PageHeader>
+      </PageSection>
     </Shell>
   );
 }
