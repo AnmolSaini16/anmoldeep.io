@@ -47,10 +47,10 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="max-w-[400px] mx-auto">
+    <Card className="w-full">
       <CardContent>
         <form
-          className="mt-4 grid grid-cols-1 auto-rows-auto gap-4"
+          className="mt-4 flex flex-col gap-4"
           onSubmit={handleSubmit}
           ref={formRef}
         >
@@ -88,7 +88,7 @@ export default function ContactForm() {
               maxLength={5000}
             />
           </div>
-          <Button className="w-fit mt-4 group" disabled={loading}>
+          <Button className="w-fit mt-3 group" disabled={loading}>
             Send message
             <Send className="w-4 h-4 ml-2 opacity-80 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Button>
