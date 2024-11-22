@@ -1,47 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
 
 import { cn, inAnimation } from "@/lib/utils";
 
-type Props = {
-  children: React.ReactNode;
-  heading: string;
-  subHeading?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
-
-const PageSection = ({
-  heading,
-  subHeading,
+function PageSection({
   children,
   className,
   ...props
-}: Props) => {
+}: HTMLMotionProps<"section">) {
   return (
-    <section className={cn("space-y-14", className)} {...props}>
-      <motion.div
-        initial={inAnimation.initial}
-        animate={inAnimation.animate}
-        transition={inAnimation.transition}
-        className="space-y-1"
-      >
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-primary">
-          {heading}
-        </h1>
-        {subHeading && <p className="text-muted-foreground">{subHeading}</p>}
-      </motion.div>
-
-      <motion.div
-        initial={inAnimation.initial}
-        animate={inAnimation.animate}
-        transition={{ ...inAnimation.transition, delay: 0.18 }}
-        className="w-full flex-grow"
-      >
-        {children}
-      </motion.div>
-    </section>
+    <motion.section
+      initial={inAnimation.initial}
+      animate={inAnimation.animate}
+      transition={inAnimation.transition}
+      className={cn("space-y-2", className)}
+      {...props}
+    >
+      {children}
+    </motion.section>
   );
-};
+}
 
-export default PageSection;
+function PageHeading({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h1
+      className={cn("text-2xl md:text-3xl font-semibold", className)}
+      {...props}
+    />
+  );
+}
+
+function PageDescription({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p className={cn("text-lg text-muted-foreground", className)} {...props} />
+  );
+}
+
+function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
+  return (
+    <motion.div
+      initial={inAnimation.initial}
+      animate={inAnimation.animate}
+      transition={{ ...inAnimation.transition, delay: 0.12 }}
+      className="w-full flex-grow pt-10"
+      {...props}
+    />
+  );
+}
+
+export { PageSection, PageHeading, PageDescription, PageContent };

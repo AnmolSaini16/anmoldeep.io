@@ -13,7 +13,7 @@ import { inAnimation } from "@/lib/utils";
 
 export default function Intro() {
   return (
-    <div className="space-y-4">
+    <section className="space-y-4">
       <motion.div
         initial={{ opacity: 0, scale: 0, x: "-40%" }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -73,6 +73,6 @@ export default function Intro() {
           </Button>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }

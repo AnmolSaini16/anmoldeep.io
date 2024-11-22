@@ -86,19 +86,17 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       <article>{children}</article>
 
-      <div>
-        <Button
-          variant="secondary"
-          size="xs"
-          asChild
-          className="group gap-1.5 rounded-full font-normal"
-        >
-          <Link href={post.url} target="_blank">
-            Found this interesting? Leave a like!
-            <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
-          </Link>
-        </Button>
-      </div>
+      <Button
+        variant="secondary"
+        size="xs"
+        asChild
+        className="group gap-1.5 rounded-full font-normal"
+      >
+        <Link href={post.url} target="_blank">
+          Found this interesting? Leave a like!
+          <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
+        </Link>
+      </Button>
     </section>
   );
 };
