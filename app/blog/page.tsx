@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { getPosts } from "@/lib/action";
 import BlogPost from "./BlogPost";
 import { Shell } from "@/components/Shell";
-import { Separator } from "@/components/ui/separator";
 import {
   PageSection,
   PageHeading,
@@ -14,6 +13,8 @@ import {
 
 export const metadata: Metadata = {
   title: "Blog",
+  description:
+    "A space where I share my thoughts, experiences, and ideas on programming, life, and everything that sparks my curiosity. Stay tuned for more!",
 };
 
 export default async function Blog() {
@@ -24,17 +25,18 @@ export default async function Blog() {
       <PageSection>
         <PageHeading>Blog</PageHeading>
         <PageDescription>
-          I occasionally write about programming. Stay Tuned for more!
+          A space where I share my thoughts, experiences, and ideas on
+          programming, life, and everything that sparks my curiosity. Stay tuned
+          for more!
         </PageDescription>
         <PageContent>
-          <div className="flex flex-col">
+          <ul className="flex flex-col gap-4">
             {posts?.map((post, index) => (
-              <React.Fragment key={post.id}>
+              <li key={post.id}>
                 <BlogPost post={post} />
-                {index !== posts.length - 1 && <Separator className="my-6" />}
-              </React.Fragment>
+              </li>
             ))}
-          </div>
+          </ul>
         </PageContent>
       </PageSection>
     </Shell>

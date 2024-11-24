@@ -32,7 +32,7 @@ export default function Intro() {
       </motion.div>
 
       <motion.h1
-        className="text-2xl md:text-3xl font-semibold tracking-tight text-primary"
+        className="text-2xl sm:text-3xl font-semibold tracking-tight text-primary"
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
@@ -63,7 +63,7 @@ export default function Intro() {
             size="xs"
             asChild
             key={item.label}
-            className="group gap-1.5 rounded-full font-normal"
+            className="group gap-1.5 tracking-wide"
           >
             <Link href={item.href} target="_blank">
               {item.icon}

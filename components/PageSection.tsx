@@ -29,7 +29,7 @@ function PageHeading({
 }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
-      className={cn("text-2xl md:text-3xl font-semibold", className)}
+      className={cn("text-2xl sm:text-3xl font-semibold", className)}
       {...props}
     />
   );
@@ -40,7 +40,10 @@ function PageDescription({
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-lg text-muted-foreground", className)} {...props} />
+    <p
+      className={cn("text-base sm:text-lg text-muted-foreground", className)}
+      {...props}
+    />
   );
 }
 
@@ -50,7 +53,7 @@ function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={{ ...inAnimation.transition, delay: 0.12 }}
-      className="w-full flex-grow pt-10"
+      className="w-full flex-grow pt-8"
       {...props}
     />
   );

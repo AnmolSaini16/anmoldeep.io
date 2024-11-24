@@ -38,13 +38,13 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{post.title.slice(0, 30) + " ..."}</BreadcrumbPage>
+            <BreadcrumbPage>{post.title.slice(0, 25) + " ..."}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
       {post?.cover_image && (
-        <div className="relative h-[275px] w-full border rounded-md bg-secondary shadow-sm hidden sm:block">
+        <div className="relative aspect-[16/7] border rounded-md bg-secondary shadow-sm hidden sm:block">
           <Image
             src={post.cover_image}
             alt={post.title}
@@ -70,7 +70,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
           )}
         </div>
 
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-primary mb-4">
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-primary mb-4">
           {post.title}
         </h1>
         {post?.tags && (
@@ -86,15 +86,10 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       <article>{children}</article>
 
-      <Button
-        variant="secondary"
-        size="xs"
-        asChild
-        className="group gap-1.5 rounded-full font-normal"
-      >
+      <Button variant="secondary" size="xs" asChild className="group gap-1.5">
         <Link href={post.url} target="_blank">
           Found this interesting? Leave a like!
-          <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
         </Link>
       </Button>
     </section>

@@ -47,8 +47,8 @@ const WorkPlace = ({
   isLast: boolean;
 }) => {
   return (
-    <li className="relative flex flex-col gap-1 justify-start md:pl-20">
-      <div className="absolute top-0 left-0 hidden md:flex flex-col items-center h-full">
+    <li className="relative flex flex-col gap-1 justify-start sm:pl-20">
+      <div className="absolute top-0 left-0 hidden sm:flex flex-col items-center h-full">
         <div className="p-2 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center z-10 bg-white dark:bg-gray-800">
           <Avatar
             src={imageSrc}
@@ -60,7 +60,7 @@ const WorkPlace = ({
         {!isLast && <Separator orientation="vertical" />}
       </div>
 
-      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-1">
+      <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-1">
         <h1 className="text-lg font-semibold">{title}</h1>
         <p className="text-xs uppercase text-muted-foreground">{time}</p>
       </div>

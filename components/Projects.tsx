@@ -1,14 +1,18 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 import { projects } from "@/config";
-import { Card } from "./ui/card";
-import { Badge } from "./ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import Section from "./Section";
 
 export default function Projects() {
@@ -19,7 +23,7 @@ export default function Projects() {
       href="https://github.com/AnmolSaini16"
       showActionBtn
     >
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((project) => (
           <Project {...project} key={project.title} />
         ))}
@@ -33,13 +37,11 @@ const Project = ({
   description,
   imageSrc,
   link,
-  tags,
 }: {
   title: string;
   description: string;
   imageSrc: StaticImageData;
   link: string;
-  tags: string[];
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -57,46 +59,25 @@ const Project = ({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="group mb-3 md:mb-8 last:mb-10"
     >
-      <Link href={link} target="_blank">
-        <Card className="w-full overflow-hidden md:pr-8 relative md:min-h-[16rem] transition md:group-odd:pl-8 bg-gray-100 hover:bg-gray-200 dark:bg-primary-foreground dark:hover:bg-white/10">
-          <div className="pt-4 pb-7 px-5 md:pl-10 md:pr-2 md:pt-10 md:max-w-[50%] flex flex-col h-full md:group-odd:ml-[18rem] space-y-1">
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="leading-relaxex text-muted-foreground">
+      <Link href={link} target="_blank" aria-label={`View ${title} project`}>
+        <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border border-dashed">
+          <CardHeader className="p-4 aspect-[16/9] shado">
+            <Image
+              src={imageSrc}
+              alt={title}
+              quality={95}
+              className="object-cover size-full"
+            />
+          </CardHeader>
+          <CardContent>
+            <CardTitle className="line-clamp-1 tracking-normal text-base">
+              {title}
+            </CardTitle>
+            <CardDescription className="line-clamp-2 leading-normal">
               {description}
-            </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {tags.map((tag, index) => (
-                <Badge
-                  key={index}
-                  variant="outline"
-                  className="border border-gray-300 dark:border-gray-600"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          <Image
-            src={imageSrc}
-            alt={title}
-            quality={95}
-            sizes="452px"
-            className="absolute hidden md:block top-12 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-            transition
-            group-hover:scale-[1.04]
-            group-hover:-translate-x-3
-            group-hover:translate-y-3
-            group-hover:-rotate-2
-
-            group-odd:group-hover:translate-x-3
-            group-odd:group-hover:translate-y-3
-            group-odd:group-hover:rotate-2
-
-            group-odd:right-[initial] group-odd:-left-40"
-          />
+            </CardDescription>
+          </CardContent>
         </Card>
       </Link>
     </motion.div>

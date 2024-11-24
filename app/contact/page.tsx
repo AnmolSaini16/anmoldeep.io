@@ -11,6 +11,8 @@ import { Shell } from "@/components/Shell";
 
 export const metadata: Metadata = {
   title: "Contact",
+  description:
+    "Got questions, feedback, or just want to say hello? I'd love to hear from you!",
 };
 
 export default function Contact() {

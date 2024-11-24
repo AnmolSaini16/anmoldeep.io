@@ -103,47 +103,18 @@ export const projects = [
     title: "Easy Poll",
     description: "Create instant, real-time polls for free!",
     imageSrc: easyPoll,
-    tags: [
-      "Next.Js",
-      "Tailwind",
-      "Shadcn",
-      "React Query",
-      "Supabase",
-      "Supabase-realtime",
-      "PostgreSQL",
-    ],
     link: "https://github.com/AnmolSaini16/easy-poll",
   },
   {
     title: "My Wallet",
     description: "Manage you Expenses.",
     imageSrc: myWallet,
-    tags: [
-      "Next.Js",
-      "Tailwind",
-      "Shadcn",
-      "React Query",
-      "Nest.JS",
-      "Node.JS",
-      "MongoDB",
-      "Prisma",
-    ],
     link: "https://github.com/AnmolSaini16/my-wallet",
   },
   {
     title: "MovieBox",
     description: "All the information related to movies. Minimalistic UI.",
     imageSrc: movieBox,
-    tags: [
-      "Next.Js",
-      "Tailwind",
-      "React Query",
-      "MUI",
-      "Node.JS",
-      "Express",
-      "MongoDB",
-      "Prisma",
-    ],
     link: "https://github.com/AnmolSaini16/movie-box",
   },
   {
@@ -151,7 +122,6 @@ export const projects = [
     description:
       "Infinite Scroll implementation with Next Server Components and React Query.",
     imageSrc: next14InfiniteScroll,
-    tags: ["Next.Js", "Server Compoenents", "React Query", "Tailwind"],
     link: "https://github.com/AnmolSaini16/next-14-infinite-scroll",
   },
 ];
@@ -161,4 +131,13 @@ export const siteConfig = {
   description:
     "I am a Software Engineer specializing in web. I love to Build Things!",
   url: "https://anmoldeep.vercel.app",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://anmoldeep.vercel.app",
+    title: "Anmoldeep Singh",
+    description:
+      "I am a Software Engineer specializing in web. I love to Build Things!",
+    siteName: "Anmoldeep Singh",
+  },
 };

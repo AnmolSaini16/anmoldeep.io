@@ -34,7 +34,7 @@ const Section = ({
       transition={inAnimation.transition}
     >
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-left text-muted-foreground text-lg md:text-xl font-medium tracking-tight shrink-0 leading-[1.1]">
+        <h2 className="text-left text-muted-foreground text-lg sm:text-xl font-medium shrink-0">
           {heading}
         </h2>
 
@@ -45,7 +45,7 @@ const Section = ({
             target="_blank"
           >
             {linkText}
-            <ArrowUpRight className="w-5 h-5 transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-5 h-5 transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
           </Link>
         )}
       </div>

@@ -25,9 +25,9 @@ export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-16 md:h-20 z-[999]">
+    <header className="h-16 sm:h-20 z-[999]">
       <nav className="container max-w-[700px] w-full h-full flex items-center justify-between">
-        <ul className="items-center gap-4 relative hidden md:flex">
+        <ul className="items-center gap-4 relative hidden sm:flex">
           {navLinks.map((link) => (
             <li key={link.label}>
               <Link
@@ -52,7 +52,7 @@ export default function Navbar() {
         </ul>
 
         <DropdownMenu>
-          <DropdownMenuTrigger asChild className="relative md:hidden">
+          <DropdownMenuTrigger asChild className="relative sm:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
               <span className="sr-only">More</span>
@@ -61,7 +61,7 @@ export default function Navbar() {
           <DropdownMenuContent
             side="bottom"
             align="start"
-            className="space-y-1 relative md:hidden"
+            className="space-y-1 relative sm:hidden"
           >
             {navLinks.map((link) => (
               <DropdownMenuItem

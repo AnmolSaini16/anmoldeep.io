@@ -6,6 +6,7 @@ import { getPost, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";
 import { Shell } from "@/components/Shell";
+import { siteConfig } from "@/config";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -33,7 +34,14 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    openGraph: { title: post.title, description: post.description },
+    openGraph: {
+      ...siteConfig.openGraph,
+      title: post.title,
+      description: post.description,
+      images: post.cover_image
+        ? [{ url: post.cover_image as string, alt: post.title }]
+        : undefined,
+    },
   };
 }
 
