@@ -3,21 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const shellVariants = cva(
-  "flex flex-col gap-20 md:gap-24 pt-10 sm:pt-16 pb-20",
-  {
-    variants: {
-      variant: {
-        default: "container",
-        sidebar: "",
-        centered: "container max-w-2xl justify-center",
-      },
+const shellVariants = cva("flex flex-col gap-20 pt-10 pb-20", {
+  variants: {
+    variant: {
+      default: "container",
+      sidebar: "",
+      centered: "container max-w-2xl justify-center",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 interface ShellProps
   extends React.HTMLAttributes<HTMLDivElement>,

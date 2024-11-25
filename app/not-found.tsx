@@ -22,9 +22,9 @@ const Custom404 = (): JSX.Element => (
           via GIPHY
         </a>
       </p>
-      <p className="text-muted-foreground">Uh oh! This page does not exists.</p>
+      <p className="text-muted-foreground text-xl">Oops! Page Not Found.</p>
 
-      <Button variant="ghost" asChild>
+      <Button variant="ghost" className="underline" asChild>
         <Link href="/">Return home</Link>
       </Button>
     </div>

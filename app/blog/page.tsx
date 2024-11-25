@@ -31,7 +31,7 @@ export default async function Blog() {
         </PageDescription>
         <PageContent>
           <ul className="flex flex-col gap-4">
-            {posts?.map((post, index) => (
+            {posts?.map((post) => (
               <li key={post.id}>
                 <BlogPost post={post} />
               </li>

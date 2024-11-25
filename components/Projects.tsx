@@ -62,12 +62,12 @@ const Project = ({
     >
       <Link href={link} target="_blank" aria-label={`View ${title} project`}>
         <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border border-dashed">
-          <CardHeader className="p-4 aspect-[16/9] shado">
+          <CardHeader className="p-4 aspect-[16/9]">
             <Image
               src={imageSrc}
               alt={title}
               quality={95}
-              className="object-cover size-full"
+              className="object-cover size-full shadow-sm rounded-sm"
             />
           </CardHeader>
           <CardContent>
