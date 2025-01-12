@@ -57,11 +57,11 @@ const BlogPost = ({ post }: { post: IPost }) => (
       </CardHeader>
       <CardContent className="p-4 pt-0 text-sm text-muted-foreground flex items-center gap-2">
         <span>{formatDate(post.published_timestamp)}</span>
-        {post?.page_views_count && (
+        {post?.page_views_count > 0 && (
           <>
             <span className="w-1 h-1 bg-muted-foreground rounded-full" />
             <span>
-              {post.page_views_count}{" "}
+              {post.page_views_count.toLocaleString()}{" "}
               {post.page_views_count === 1 ? "view" : "views"}
             </span>
           </>
