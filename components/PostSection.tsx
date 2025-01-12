@@ -1,17 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft } from "lucide-react";
 
 import { cn, formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "./ui/breadcrumb";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
@@ -22,26 +14,18 @@ type Props = {
 
 const PostSection = ({ children, post, className, ...props }: Props) => {
   return (
-    <section className={cn("space-y-10", className)} {...props}>
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/">Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/blog">Blog</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>{post.title.slice(0, 25) + " ..."}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+    <section className={cn("space-y-8", className)} {...props}>
+      <Button
+        size="sm"
+        variant="link"
+        className="group px-0 text-muted-foreground transition-colors hover:text-primary hover:no-underline"
+        asChild
+      >
+        <Link href="/blog">
+          <ChevronLeft className="w-4 h-4 mr-1 transition-all text-muted-foreground sm:group-hover:text-primary sm:group-hover:-translate-x-1" />
+          Back to blog
+        </Link>
+      </Button>
 
       {post?.cover_image && (
         <div className="relative aspect-[16/7] border rounded-md bg-secondary shadow-sm hidden sm:block">
@@ -56,16 +40,12 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       )}
 
       <div>
-        <div className="mb-2 flex items-center gap-2">
-          <p className="text-sm text-muted-foreground">
-            {formatDate(post.published_timestamp)}
-          </p>
+        <div className="mb-2 text-sm text-muted-foreground flex items-center gap-2">
+          <span>{formatDate(post.published_timestamp)}</span>
           {post?.reading_time_minutes && (
             <>
               <span className="w-1 h-1 bg-muted-foreground rounded-full" />
-              <p className="text-sm text-muted-foreground">
-                {post.reading_time_minutes} min read
-              </p>
+              <span>{post.reading_time_minutes} min read</span>
             </>
           )}
         </div>
@@ -86,10 +66,15 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       <article>{children}</article>
 
-      <Button variant="secondary" size="xs" asChild className="group gap-1.5">
+      <Button
+        variant="secondary"
+        size="sm"
+        className="group tracking-wide"
+        asChild
+      >
         <Link href={post.url} target="_blank">
           Found this interesting? Leave a like!
-          <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="w-5 h-5 ml-2 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
         </Link>
       </Button>
     </section>

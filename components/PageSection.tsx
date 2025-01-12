@@ -53,7 +53,7 @@ function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={{ ...inAnimation.transition, delay: 0.12 }}
-      className="w-full flex-grow pt-8"
+      className="w-full flex-grow pt-6"
       {...props}
     />
   );

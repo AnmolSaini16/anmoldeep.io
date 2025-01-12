@@ -10,21 +10,26 @@ export const metadata: Metadata = {
 
 const Custom404 = (): JSX.Element => (
   <Shell variant="centered">
-    <div className="flex items-center flex-col h-full gap-4">
+    <div className="flex items-center flex-col h-full gap-2">
       <iframe
         src="https://giphy.com/embed/BweKhXaocjST6cnWMH"
         width="280"
         height="280"
         allowFullScreen
       ></iframe>
-      <p>
+      <p className="text-sm text-muted-foreground">
         <a href="https://giphy.com/gifs/sendwishonline-alien-404-area-51-BweKhXaocjST6cnWMH">
           via GIPHY
         </a>
       </p>
-      <p className="text-muted-foreground text-xl">Oops! Page Not Found.</p>
 
-      <Button variant="ghost" className="underline" asChild>
+      <h1 className="text-2xl pt-6 font-semibold">Oops! Page Not Found.</h1>
+
+      <Button
+        variant="ghost"
+        className="underline underline-offset-4 tracking-wide"
+        asChild
+      >
         <Link href="/">Return home</Link>
       </Button>
     </div>

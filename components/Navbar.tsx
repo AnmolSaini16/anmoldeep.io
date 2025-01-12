@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Home, BookText, Contact } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -16,36 +16,39 @@ import {
 import { Button } from "./ui/button";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/", icon: Home },
+  { label: "Blog", href: "/blog", icon: BookText },
+  {
+    label: "Contact",
+    href: "/contact",
+    icon: Contact,
+  },
 ];
 
 export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-16 sm:h-24 z-[999]">
-      <nav className="container max-w-[700px] w-full h-full flex items-center justify-between">
-        <ul className="items-center gap-4 relative hidden sm:flex">
-          {navLinks.map((link) => (
-            <li key={link.label}>
+    <header className="h-16 sm:h-20 z-[999]">
+      <nav className="container max-w-[700px] size-full flex items-center justify-between">
+        <ul className="items-center gap-8 relative hidden sm:flex">
+          {navLinks.map(({ label, href }) => (
+            <li key={label}>
               <Link
-                href={link.href}
-                className={cn(
-                  "relative px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-primary transition-colors",
-                  link.href === path ? "text-primary" : "text-muted-foreground"
-                )}
+                href={href}
+                className={`relative py-2.5 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                  href === path
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
-                {link.href === path && (
+                {href === path && (
                   <motion.span
-                    layoutId="bubble"
-                    className="absolute inset-0 -z-10 rounded-md bg-secondary"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    layoutId="underline"
+                    className="absolute bottom-0 w-full h-[2.5px] bg-primary rounded"
                   />
                 )}
-
-                {link.label}
+                {label}
               </Link>
             </li>
           ))}
@@ -61,18 +64,21 @@ export default function Navbar() {
           <DropdownMenuContent
             side="bottom"
             align="start"
-            className="space-y-1 relative sm:hidden"
+            className="space-y-1 sm:hidden"
           >
             {navLinks.map((link) => (
               <DropdownMenuItem
                 className={cn(
-                  "text-primary font-medium tracking-wide focus:bg-transaprent",
+                  "text-primary font-medium tracking-wide focus:bg-transaprent py-2",
                   link.href === path && "bg-accent"
                 )}
                 key={link.label}
                 asChild
               >
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href}>
+                  <link.icon className="w-4 h-4 mr-2" />
+                  <span>{link.label}</span>
+                </Link>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>

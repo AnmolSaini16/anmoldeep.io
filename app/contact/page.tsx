@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <Shell className="max-w-[700px]">
       <PageSection>
-        <PageHeading>Contact</PageHeading>
+        <PageHeading>Contact 🤙</PageHeading>
         <PageDescription>
           Got questions, feedback, or just want to say hello? I'd love to hear
           from you!

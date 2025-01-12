@@ -47,25 +47,13 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="w-full">
+    <Card className="size-full border-dashed">
       <CardContent>
         <form
-          className="mt-4 flex flex-col gap-4"
+          className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6"
           onSubmit={handleSubmit}
           ref={formRef}
         >
-          <div className="space-y-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="senderEmail"
-              type="email"
-              required
-              maxLength={100}
-              placeholder="Your email"
-            />
-          </div>
-
           <div className="space-y-1.5">
             <Label htmlFor="name">Name</Label>
             <Input
@@ -79,17 +67,29 @@ export default function ContactForm() {
           </div>
 
           <div className="space-y-1.5">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              name="senderEmail"
+              type="email"
+              required
+              maxLength={100}
+              placeholder="Your email"
+            />
+          </div>
+
+          <div className="space-y-1.5 sm:col-span-2">
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               name="senderMessage"
               placeholder="Your message"
-              required
               maxLength={5000}
+              required
             />
           </div>
-          <Button className="w-fit mt-3 group" disabled={loading}>
-            Send message
+          <Button className="mt-2 group sm:col-span-2" disabled={loading}>
+            Let's talk
             <Send className="w-4 h-4 ml-2 opacity-80 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Button>
         </form>

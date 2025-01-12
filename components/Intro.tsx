@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 import profilePic from "@/public/profile.png";
 
@@ -21,12 +20,12 @@ export default function Intro() {
           type: "tween",
           duration: 0.3,
         }}
-        className="pb-4"
+        className="pb-2"
       >
         <Avatar
           src={profilePic}
           alt="Anmoldeep Singh"
-          size="xl"
+          size="lg"
           sizes="112px"
         />
       </motion.div>
@@ -37,7 +36,7 @@ export default function Intro() {
         animate={inAnimation.animate}
         transition={inAnimation.transition}
       >
-        Hey, I'm Anmoldeep Singh 👋
+        Hey, I'm Anmoldeep Singh! 👋
       </motion.h1>
 
       <motion.p
@@ -52,23 +51,22 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center flex-wrap gap-2 pt-2"
+        className="flex items-center flex-wrap gap-x-6 gap-y-1"
         initial={{ x: -150, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 0.8 }}
       >
         {socialLinks.map((item) => (
           <Button
-            variant="secondary"
-            size="xs"
+            variant="link"
+            size="sm"
             asChild
             key={item.label}
-            className="group gap-1.5 tracking-wide"
+            className="px-0 text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 hover:no-underline"
           >
             <Link href={item.href} target="_blank">
-              {item.icon}
+              <item.icon className="size-4" />
               {item.label}
-              <ArrowUpRight className="w-4 h-4 ml-auto text-muted-foreground transition-all md:group-hover:text-primary md:group-hover:translate-x-0.5 md:group-hover:-translate-y-0.5" />
             </Link>
           </Button>
         ))}

@@ -6,7 +6,7 @@ export default function About() {
       <div className="space-y-4 leading-relaxed">
         <p>
           I've been immersed in the world of coding for{" "}
-          {new Date().getFullYear() - 2021} years now. It all started during my
+          {new Date().getFullYear() - 2022} years now. It all started during my
           third year of college when I discovered my passion for Web
           Development, and since then, there's been no turning back.
         </p>
