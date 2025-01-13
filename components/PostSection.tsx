@@ -74,7 +74,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       >
         <Link href={post.url} target="_blank">
           Found this interesting? Leave a like!
-          <ArrowUpRight className="w-5 h-5 ml-2 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="w-4 h-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
         </Link>
       </Button>
     </section>

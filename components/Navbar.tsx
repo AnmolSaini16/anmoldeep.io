@@ -69,7 +69,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <DropdownMenuItem
                 className={cn(
-                  "text-primary font-medium tracking-wide focus:bg-transaprent py-2",
+                  "text-primary font-medium tracking-wide py-2",
                   link.href === path && "bg-accent"
                 )}
                 key={link.label}

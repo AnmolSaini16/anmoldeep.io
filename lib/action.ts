@@ -1,58 +1,26 @@
 "use server";
 
-import { IPost } from "@/types";
 import { Resend } from "resend";
+
+import { IPost } from "@/types";
+import { fetchFromDevToAPI } from "./utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const getPosts = async (): Promise<IPost[] | undefined> => {
-  let postsResponse;
-  try {
-    const headers = new Headers();
-    headers.append("api-key", process.env.DEV_TO_API_KEY!);
+export const getPosts = (params?: {
+  [key: string]: string | number;
+}): Promise<IPost[] | undefined> => {
+  const queryString = params
+    ? "?" + new URLSearchParams(params as Record<string, string>).toString()
+    : "";
 
-    postsResponse = await fetch("https://dev.to/api/articles/me/published", {
-      headers,
-      next: { revalidate: 1800 },
-    });
-  } catch (error) {
-    console.log(error);
-  }
-
-  if (postsResponse?.ok) {
-    return postsResponse.json();
-  } else {
-    console.log(
-      `HTTP Response Code: ${postsResponse?.status}, Message: ${postsResponse?.statusText}`
-    );
-  }
+  return fetchFromDevToAPI<IPost[]>(
+    `https://dev.to/api/articles/me/published${queryString}`
+  );
 };
 
-export const getPost = async (slug: string): Promise<IPost | undefined> => {
-  let postsResponse;
-  try {
-    const headers = new Headers();
-    headers.append("api-key", process.env.DEV_TO_API_KEY!);
-
-    postsResponse = await fetch(
-      `https://dev.to/api/articles/anmolsaini16/${slug}`,
-      {
-        headers,
-        next: { revalidate: 1800 },
-      }
-    );
-  } catch (error) {
-    console.log(error);
-  }
-
-  if (postsResponse?.ok) {
-    return postsResponse.json();
-  } else {
-    console.log(
-      `HTTP Response Code: ${postsResponse?.status}, Message: ${postsResponse?.statusText}`
-    );
-  }
-};
+export const getPost = (slug: string): Promise<IPost | undefined> =>
+  fetchFromDevToAPI<IPost>(`https://dev.to/api/articles/anmolsaini16/${slug}`);
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;

@@ -14,6 +14,7 @@ type Props = {
   href?: string;
   showActionBtn?: boolean;
   linkText?: string;
+  openInNewTab?: boolean;
 } & HTMLMotionProps<"section">;
 
 const Section = ({
@@ -23,6 +24,7 @@ const Section = ({
   showActionBtn = false,
   href = "/",
   linkText,
+  openInNewTab = false,
   ...props
 }: Props) => {
   return (
@@ -33,22 +35,29 @@ const Section = ({
       animate={inAnimation.animate}
       transition={inAnimation.transition}
     >
-      <div className="flex items-center justify-between gap-4">
-        <h2 className="text-left text-lg sm:text-xl font-semibold shrink-0">
-          {heading}
-        </h2>
+      <h2 className="text-left text-lg sm:text-xl font-semibold shrink-0">
+        {heading}
+      </h2>
 
-        {showActionBtn && (
-          <Button size="sm" variant="link" className="group px-0" asChild>
-            <Link href={href} target="_blank">
-              {linkText}
-              <ArrowUpRight className="w-5 h-5 ml-2 transition-all text-muted-foreground sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
-            </Link>
-          </Button>
-        )}
-      </div>
+      <div className="flex-grow">{children}</div>
 
-      {children}
+      {showActionBtn && (
+        <Button
+          variant="ghost"
+          size="sm"
+          className="group w-fit mx-auto"
+          asChild
+        >
+          <Link
+            href={href}
+            target={openInNewTab ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+          >
+            {linkText}
+            <ArrowUpRight className="w-4 h-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+          </Link>
+        </Button>
+      )}
     </motion.section>
   );
 };

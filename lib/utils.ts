@@ -17,3 +17,24 @@ export const inAnimation = {
   animate: { y: 0, opacity: 1 },
   transition: { duration: 0.4, ease: "easeOut" },
 };
+
+export const fetchFromDevToAPI = async <T>(
+  url: string
+): Promise<T | undefined> => {
+  try {
+    const headers = new Headers({ "api-key": process.env.DEV_TO_API_KEY! });
+    const response = await fetch(url, { headers, next: { revalidate: 1800 } });
+
+    if (!response.ok) {
+      console.error(
+        `HTTP Response Code: ${response.status}, Message: ${response.statusText}`
+      );
+      return undefined;
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return undefined;
+  }
+};

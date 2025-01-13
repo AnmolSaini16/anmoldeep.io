@@ -19,9 +19,10 @@ export default function Projects() {
   return (
     <Section
       heading="Latest Projects"
-      linkText="View All"
+      linkText="Check out more on GitHub"
       href="https://github.com/AnmolSaini16"
       showActionBtn
+      openInNewTab
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((project) => (
@@ -70,7 +71,7 @@ const Project = ({
               className="object-cover size-full shadow-sm rounded-sm"
             />
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4 pt-0">
             <CardTitle className="line-clamp-1 tracking-normal text-base">
               {title}
             </CardTitle>

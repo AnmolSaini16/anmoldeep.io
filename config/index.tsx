@@ -75,19 +75,19 @@ export const projects = [
     imageSrc: myWallet,
     link: "https://github.com/AnmolSaini16/my-wallet",
   },
-  {
-    title: "MovieBox",
-    description: "All the information related to movies. Minimalistic UI.",
-    imageSrc: movieBox,
-    link: "https://github.com/AnmolSaini16/movie-box",
-  },
-  {
-    title: "Next Js Infinite Scroll",
-    description:
-      "Infinite Scroll implementation with Next Server Components and React Query.",
-    imageSrc: next14InfiniteScroll,
-    link: "https://github.com/AnmolSaini16/next-14-infinite-scroll",
-  },
+  // {
+  //   title: "MovieBox",
+  //   description: "All the information related to movies. Minimalistic UI.",
+  //   imageSrc: movieBox,
+  //   link: "https://github.com/AnmolSaini16/movie-box",
+  // },
+  // {
+  //   title: "Next Js Infinite Scroll",
+  //   description:
+  //     "Infinite Scroll implementation with Next Server Components and React Query.",
+  //   imageSrc: next14InfiniteScroll,
+  //   link: "https://github.com/AnmolSaini16/next-14-infinite-scroll",
+  // },
 ];
 
 export const siteConfig = {
