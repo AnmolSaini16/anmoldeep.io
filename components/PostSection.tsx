@@ -28,7 +28,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       </Button>
 
       {post?.cover_image && (
-        <div className="relative aspect-[16/7] border rounded-md bg-secondary shadow-sm hidden sm:block">
+        <div className="relative aspect-[16/7] border rounded-md bg-secondary shadow hidden sm:block">
           <Image
             src={post.cover_image}
             alt={post.title}

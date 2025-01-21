@@ -68,7 +68,7 @@ const WorkPlace = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm hover:underline text-blue-400"
+        className="text-sm hover:underline text-blue-400 w-fit"
       >
         {company}
       </Link>

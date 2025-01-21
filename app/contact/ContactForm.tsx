@@ -2,7 +2,6 @@
 
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -88,9 +87,15 @@ export default function ContactForm() {
               required
             />
           </div>
-          <Button className="mt-2 group sm:col-span-2" disabled={loading}>
+          <Button
+            className="mt-2 group sm:col-span-2 tracking-wide"
+            disabled={loading}
+            type="submit"
+          >
             Let's talk
-            <Send className="w-4 h-4 ml-2 opacity-80 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <span className="ml-2 opacity-90 transition-all sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1">
+              🚀
+            </span>
           </Button>
         </form>
       </CardContent>

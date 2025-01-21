@@ -45,7 +45,7 @@ export default function Navbar() {
                 {href === path && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute bottom-0 w-full h-[2.5px] bg-primary rounded"
+                    className="absolute bottom-0 w-full h-0.5 bg-primary rounded"
                   />
                 )}
                 {label}

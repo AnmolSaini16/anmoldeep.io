@@ -12,25 +12,20 @@ const Custom404 = (): JSX.Element => (
   <Shell variant="centered">
     <div className="flex items-center flex-col h-full gap-2">
       <iframe
-        src="https://giphy.com/embed/BweKhXaocjST6cnWMH"
-        width="280"
-        height="280"
-        allowFullScreen
+        src="https://giphy.com/embed/8L0Pky6C83SzkzU55a"
+        width="150"
+        height="150"
+        className="giphy-embed rounded shadow"
+        title="404 GIF"
       ></iframe>
-      <p className="text-sm text-muted-foreground">
-        <a href="https://giphy.com/gifs/sendwishonline-alien-404-area-51-BweKhXaocjST6cnWMH">
-          via GIPHY
-        </a>
+
+      <h1 className="text-3xl font-bold mt-4">Lost in the void? 🚀</h1>
+      <p className="text-base text-muted-foreground text-center max-w-md">
+        Sorry, the page you were looking for doesn’t exist.
       </p>
 
-      <h1 className="text-2xl pt-6 font-semibold">Oops! Page Not Found.</h1>
-
-      <Button
-        variant="ghost"
-        className="underline underline-offset-4 tracking-wide"
-        asChild
-      >
-        <Link href="/">Return home</Link>
+      <Button variant="outline" className="tracking-wide mt-4" asChild>
+        <Link href="/">Return to Home</Link>
       </Button>
     </div>
   </Shell>

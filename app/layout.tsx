@@ -65,8 +65,9 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
 
             <Footer />
+
+            <ScrollToTop />
           </div>
-          <ScrollToTop />
         </ThemeProvider>
         <Toaster />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ""} />
