@@ -2,6 +2,7 @@
 
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
+import { Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -46,56 +47,58 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="size-full border-dashed">
-      <CardContent>
-        <form
-          className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6"
-          onSubmit={handleSubmit}
-          ref={formRef}
-        >
-          <div className="space-y-1.5">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              name="senderName"
-              type="name"
-              required
-              maxLength={100}
-              placeholder="Your name"
-            />
+    <Card className="border-dashed">
+      <CardContent className="mt-4">
+        <form className="grid gap-6" onSubmit={handleSubmit} ref={formRef}>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                name="senderName"
+                type="text"
+                required
+                maxLength={100}
+                placeholder="John Doe"
+                disabled={loading}
+                className="transition-colors focus-visible:ring-primary"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                name="senderEmail"
+                type="email"
+                required
+                maxLength={100}
+                placeholder="john@example.com"
+                disabled={loading}
+                className="transition-colors focus-visible:ring-primary"
+              />
+            </div>
           </div>
 
-          <div className="space-y-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="senderEmail"
-              type="email"
-              required
-              maxLength={100}
-              placeholder="Your email"
-            />
-          </div>
-
-          <div className="space-y-1.5 sm:col-span-2">
+          <div className="space-y-2">
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               name="senderMessage"
-              placeholder="Your message"
-              maxLength={5000}
+              placeholder="Your message here..."
               required
+              maxLength={5000}
+              disabled={loading}
+              className="min-h-[150px] resize-y transition-colors focus-visible:ring-primary"
             />
+            <p className="text-xs text-muted-foreground">
+              Maximum 5000 characters
+            </p>
           </div>
-          <Button
-            className="mt-2 group sm:col-span-2 tracking-wide"
-            disabled={loading}
-            type="submit"
-          >
+
+          <Button className="group" disabled={loading} type="submit" size="lg">
             Let's talk
-            <span className="ml-2 opacity-90 transition-all sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1">
-              🚀
-            </span>
+            <Send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
           </Button>
         </form>
       </CardContent>

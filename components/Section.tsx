@@ -2,7 +2,7 @@
 
 import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 import { cn, inAnimation } from "@/lib/utils";
 import { Button } from "./ui/button";
@@ -12,49 +12,53 @@ type Props = {
   heading: string;
   children: React.ReactNode;
   href?: string;
-  showActionBtn?: boolean;
   linkText?: string;
-  openInNewTab?: boolean;
+  showActionBtn?: boolean;
+  externalLink?: boolean;
 } & HTMLMotionProps<"section">;
 
 const Section = ({
   heading,
   children,
   className,
-  showActionBtn = false,
-  href = "/",
+  href,
   linkText,
-  openInNewTab = false,
+  showActionBtn = false,
+  externalLink = false,
   ...props
 }: Props) => {
+  const LinkIcon = externalLink ? ExternalLink : ArrowUpRight;
   return (
     <motion.section
-      className={cn("w-full flex flex-col gap-4", className)}
+      className={cn("w-full flex flex-col gap-6", className)}
       {...props}
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={inAnimation.transition}
     >
-      <h2 className="text-left text-lg sm:text-xl font-semibold shrink-0">
-        {heading}
-      </h2>
+      <div className="flex items-center gap-4">
+        <h1 className="text-2xl font-bold tracking-tight shrink-0">
+          {heading}
+        </h1>
+        <div className="h-px flex-1 bg-border" />
+      </div>
 
       <div className="flex-grow">{children}</div>
 
-      {showActionBtn && (
+      {showActionBtn && href && linkText && (
         <Button
           variant="ghost"
           size="sm"
-          className="group w-fit mx-auto"
+          className="group inline-flex items-center w-fit mx-auto gap-1.5 tracking-wide"
           asChild
         >
           <Link
             href={href}
-            target={openInNewTab ? "_blank" : "_self"}
-            rel="noopener noreferrer"
+            target={externalLink ? "_blank" : "_self"}
+            rel={externalLink ? "noopener noreferrer" : undefined}
           >
             {linkText}
-            <ArrowUpRight className="w-4 h-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+            <LinkIcon className="size-4 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
           </Link>
         </Button>
       )}

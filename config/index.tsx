@@ -1,64 +1,74 @@
-import { Mail } from "lucide-react";
 import {
-  FaXTwitter,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+  FiGithub,
+  FiLinkedin,
+  FiInstagram,
+  FiTwitter,
+  FiMail,
+} from "react-icons/fi";
 
 import optymLogo from "@/public/work-place/optym.jpeg";
 import easyPoll from "@/public/project/easy-poll.png";
 import myWallet from "@/public/project/my-wallet.png";
-import movieBox from "@/public/project/movie-box.png";
-import next14InfiniteScroll from "@/public/project/next-infinite.png";
 
 export const socialLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/anmoldeep-singh-51bb4b1b1/",
-    icon: FaLinkedinIn,
+    icon: FiLinkedin,
   },
   {
     label: "GitHub",
     href: "https://github.com/AnmolSaini16",
-    icon: FaGithub,
+    icon: FiGithub,
   },
   {
     label: "Twitter",
     href: "https://x.com/sainianmol16",
-    icon: FaXTwitter,
+    icon: FiTwitter,
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/anmol_saini16/",
-    icon: FaInstagram,
+    icon: FiInstagram,
   },
 
   {
     label: "Mail",
     href: "mailto:sainianmol16@gmail.com",
-    icon: Mail,
+    icon: FiMail,
   },
 ];
 
 export const workplaces = [
   {
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     company: "Optym",
-    time: "July, 2022 - Present",
+    time: "January, 2025 — Present",
     imageSrc: optymLogo,
     link: "https://optym.com/",
+    location: "Bengaluru, India",
     description:
-      "Designed and developed key features impacting major LTL clients in the USA, collaborating with cross-functional teams to deliver high-quality code. Optimized UI and backend to enhance performance, user experience, and business profitability using the latest technologies like JavaScript, TypeScript, React, Next, Node, Nest, PostgreSQL, Material UI, MobX, and Azure DevOps.",
+      "Leading the design and development of cutting-edge features for HaulSuite products, driving innovation and efficiency for LTL carriers.",
+  },
+  {
+    title: "Software Engineer",
+    company: "Optym",
+    time: "July, 2022 — January, 2025",
+    imageSrc: optymLogo,
+    location: "Bengaluru, India",
+    link: "https://optym.com/",
+    description:
+      "Designed and developed key features for HaulSuite products at Optym for leading LTL carriers in the United States. Worked across the stack using React, Next.js, TypeScript, Node.js, PostgreSQL, and cloud technologies to deliver high-performance and scalable solutions.",
   },
   {
     title: "Software Engineer Intern",
     company: "Optym",
-    time: "May, 2022 - July, 2022",
+    time: "May, 2022 — July, 2022",
     imageSrc: optymLogo,
+    location: "Bengaluru, India",
     link: "https://optym.com/",
     description:
-      "Responsible for development of UI and front-end features from scratch, using JavaScript, TypeScript, React, Next Js, Material UI.",
+      "Responsible for development of UI and front-end features, using JavaScript, TypeScript, React and Next.js.",
   },
 ];
 
@@ -75,19 +85,6 @@ export const projects = [
     imageSrc: myWallet,
     link: "https://github.com/AnmolSaini16/my-wallet",
   },
-  // {
-  //   title: "MovieBox",
-  //   description: "All the information related to movies. Minimalistic UI.",
-  //   imageSrc: movieBox,
-  //   link: "https://github.com/AnmolSaini16/movie-box",
-  // },
-  // {
-  //   title: "Next Js Infinite Scroll",
-  //   description:
-  //     "Infinite Scroll implementation with Next Server Components and React Query.",
-  //   imageSrc: next14InfiniteScroll,
-  //   link: "https://github.com/AnmolSaini16/next-14-infinite-scroll",
-  // },
 ];
 
 export const siteConfig = {

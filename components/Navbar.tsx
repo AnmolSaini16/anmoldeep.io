@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Home, BookText, Contact } from "lucide-react";
+import { Menu, Home, Contact, PenLine } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 
 const navLinks = [
   { label: "Home", href: "/", icon: Home },
-  { label: "Blog", href: "/blog", icon: BookText },
+  { label: "Blog", href: "/blog", icon: PenLine },
   {
     label: "Contact",
     href: "/contact",
@@ -31,12 +31,12 @@ export default function Navbar() {
   return (
     <header className="h-16 sm:h-20 z-[999]">
       <nav className="container max-w-[700px] size-full flex items-center justify-between">
-        <ul className="items-center gap-8 relative hidden sm:flex">
+        <ul className="items-center gap-6 relative hidden sm:flex">
           {navLinks.map(({ label, href }) => (
             <li key={label}>
               <Link
                 href={href}
-                className={`relative py-2.5 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                className={`relative py-2.5 px-1 text-sm font-medium tracking-wide transition-colors ${
                   href === path
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
@@ -45,7 +45,7 @@ export default function Navbar() {
                 {href === path && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute bottom-0 w-full h-0.5 bg-primary rounded"
+                    className="absolute bottom-0 left-0 right-0 bg-primary w-full h-0.5 rounded"
                   />
                 )}
                 {label}

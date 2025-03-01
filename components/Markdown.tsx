@@ -1,19 +1,34 @@
-import Markdown from "react-markdown";
+import Markdown, { Options } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import Link from "next/link";
 
-type Props = { children: string };
-
-const MarkdownComponent = ({ children }: Props) => {
+const MarkdownComponent = (props: Options) => {
   return (
-    <div className="prose dark:prose-invert dark:prose-pre:bg-primary-foreground">
-      <Markdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
-        children={children}
-      />
-    </div>
+    <Markdown
+      {...props}
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
+      components={{
+        a: CustomLink,
+      }}
+    />
   );
+};
+
+const CustomLink = ({
+  href,
+  ...props
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+  return href ? (
+    <Link
+      {...props}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline-offset-4"
+    />
+  ) : null;
 };
 
 export default MarkdownComponent;

@@ -12,7 +12,7 @@ import { inAnimation } from "@/lib/utils";
 
 export default function Intro() {
   return (
-    <section className="space-y-4">
+    <section className="flex flex-col gap-4">
       <motion.div
         initial={{ opacity: 0, scale: 0, x: "-40%" }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -31,7 +31,7 @@ export default function Intro() {
       </motion.div>
 
       <motion.h1
-        className="text-2xl sm:text-3xl font-semibold tracking-tight text-primary"
+        className="text-3xl font-bold tracking-tight text-primary"
         initial={inAnimation.initial}
         animate={inAnimation.animate}
         transition={inAnimation.transition}
@@ -51,24 +51,39 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center flex-wrap gap-x-6 gap-y-1"
-        initial={{ x: -150, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ type: "spring", duration: 0.8 }}
+        className="flex items-center gap-3 flex-wrap"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
       >
-        {socialLinks.map((item) => (
-          <Button
-            variant="link"
-            size="sm"
-            asChild
-            key={item.label}
-            className="px-0 text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 hover:no-underline"
+        {socialLinks.map((link, index) => (
+          <motion.div
+            key={link.label}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.1 + index * 0.1,
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
           >
-            <Link href={item.href} target="_blank">
-              <item.icon className="size-4" />
-              {item.label}
-            </Link>
-          </Button>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="rounded-full"
+              asChild
+            >
+              <Link
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                <link.icon className="size-4" />
+              </Link>
+            </Button>
+          </motion.div>
         ))}
       </motion.div>
     </section>

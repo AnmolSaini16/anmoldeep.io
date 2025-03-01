@@ -15,7 +15,7 @@ function PageSection({
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={inAnimation.transition}
-      className={cn("space-y-2", className)}
+      className={cn("space-y-1.5", className)}
       {...props}
     >
       {children}
@@ -27,12 +27,7 @@ function PageHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return (
-    <h1
-      className={cn("text-2xl sm:text-3xl font-semibold", className)}
-      {...props}
-    />
-  );
+  return <h1 className={cn("text-3xl font-bold", className)} {...props} />;
 }
 
 function PageDescription({

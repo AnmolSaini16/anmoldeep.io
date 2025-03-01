@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { getPosts } from "@/lib/action";
 import { Shell } from "@/components/Shell";
@@ -10,9 +9,7 @@ import {
   PageDescription,
   PageContent,
 } from "@/components/PageSection";
-import { formatDate } from "@/lib/utils";
-import { IPost } from "@/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BlogPost } from "@/components/BlogPost";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,7 +29,7 @@ export default async function Blog() {
           curiosity.
         </PageDescription>
         <PageContent>
-          <ul className="space-y-4">
+          <ul className="grid gap-6 grid-cols-1">
             {posts?.map((post) => (
               <li key={post.id}>
                 <BlogPost post={post} />
@@ -44,29 +41,3 @@ export default async function Blog() {
     </Shell>
   );
 }
-
-const BlogPost = ({ post }: { post: IPost }) => (
-  <Link
-    href={`/blog/${post.slug}`}
-    aria-label={`View ${post.title}`}
-    className=""
-  >
-    <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border border-dashed">
-      <CardHeader className="p-4 pb-1">
-        <CardTitle className="text-lg font-semibold">{post.title}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-4 pt-0 text-sm text-muted-foreground flex items-center gap-2">
-        <span>{formatDate(post.published_timestamp)}</span>
-        {post?.page_views_count > 0 && (
-          <>
-            <span className="w-1 h-1 bg-muted-foreground rounded-full" />
-            <span>
-              {post.page_views_count.toLocaleString()}{" "}
-              {post.page_views_count === 1 ? "view" : "views"}
-            </span>
-          </>
-        )}
-      </CardContent>
-    </Card>
-  </Link>
-);

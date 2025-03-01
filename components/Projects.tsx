@@ -22,7 +22,7 @@ export default function Projects() {
       linkText="Check out more on GitHub"
       href="https://github.com/AnmolSaini16"
       showActionBtn
-      openInNewTab
+      externalLink
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((project) => (
@@ -61,8 +61,13 @@ const Project = ({
         opacity: opacityProgess,
       }}
     >
-      <Link href={link} target="_blank" aria-label={`View ${title} project`}>
-        <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border border-dashed">
+      <Link
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${title} project`}
+      >
+        <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border-dashed">
           <CardHeader className="p-4 aspect-[16/9]">
             <Image
               src={imageSrc}
