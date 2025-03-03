@@ -1,41 +1,35 @@
-import {
-  FiGithub,
-  FiLinkedin,
-  FiInstagram,
-  FiTwitter,
-  FiMail,
-} from "react-icons/fi";
-
 import optymLogo from "@/public/work-place/optym.jpeg";
 import easyPoll from "@/public/project/easy-poll.png";
 import myWallet from "@/public/project/my-wallet.png";
+
+import { Icons } from "@/components/Icons";
 
 export const socialLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/anmoldeep-singh-51bb4b1b1/",
-    icon: FiLinkedin,
+    icon: Icons.linkedin,
   },
   {
     label: "GitHub",
     href: "https://github.com/AnmolSaini16",
-    icon: FiGithub,
+    icon: Icons.github,
   },
   {
     label: "Twitter",
     href: "https://x.com/sainianmol16",
-    icon: FiTwitter,
+    icon: Icons.twitter,
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/anmol_saini16/",
-    icon: FiInstagram,
+    icon: Icons.instagram,
   },
 
   {
     label: "Mail",
     href: "mailto:sainianmol16@gmail.com",
-    icon: FiMail,
+    icon: Icons.mail,
   },
 ];
 
@@ -43,7 +37,7 @@ export const workplaces = [
   {
     title: "Senior Software Engineer",
     company: "Optym",
-    time: "January, 2025 — Present",
+    time: "Jan, 2025 — Present",
     imageSrc: optymLogo,
     link: "https://optym.com/",
     location: "Bengaluru, India",
@@ -53,7 +47,7 @@ export const workplaces = [
   {
     title: "Software Engineer",
     company: "Optym",
-    time: "July, 2022 — January, 2025",
+    time: "Jul, 2022 — Jan, 2025",
     imageSrc: optymLogo,
     location: "Bengaluru, India",
     link: "https://optym.com/",
@@ -63,7 +57,7 @@ export const workplaces = [
   {
     title: "Software Engineer Intern",
     company: "Optym",
-    time: "May, 2022 — July, 2022",
+    time: "May, 2022 — Jul, 2022",
     imageSrc: optymLogo,
     location: "Bengaluru, India",
     link: "https://optym.com/",
@@ -77,13 +71,15 @@ export const projects = [
     title: "Easy Poll",
     description: "Create instant, real-time polls for free!",
     imageSrc: easyPoll,
-    link: "https://github.com/AnmolSaini16/easy-poll",
+    github: "https://github.com/AnmolSaini16/easy-poll",
+    demo: "https://easy-poll-time.vercel.app/",
   },
   {
     title: "My Wallet",
     description: "Manage you Expenses.",
     imageSrc: myWallet,
-    link: "https://github.com/AnmolSaini16/my-wallet",
+    github: "https://github.com/AnmolSaini16/my-wallet",
+    demo: "https://my-wallet-teal.vercel.app/",
   },
 ];
 

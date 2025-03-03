@@ -2,11 +2,11 @@
 
 import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 import { cn, inAnimation } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { Icons } from "./Icons";
 
 type Props = {
   heading: string;
@@ -27,7 +27,7 @@ const Section = ({
   externalLink = false,
   ...props
 }: Props) => {
-  const LinkIcon = externalLink ? ExternalLink : ArrowUpRight;
+  const LinkIcon = externalLink ? Icons.externalLink : Icons.arrowUpRight;
   return (
     <motion.section
       className={cn("w-full flex flex-col gap-6", className)}

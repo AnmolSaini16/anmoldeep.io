@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Calendar, Clock, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { IPost } from "@/types";
@@ -13,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Icons } from "./Icons";
 
 export const BlogPost = ({ post }: { post: IPost }) => (
   <Link href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
@@ -33,7 +33,7 @@ export const BlogPost = ({ post }: { post: IPost }) => (
         <CardFooter className="p-5 pt-0">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-1.5">
-              <Calendar className="size-4" />
+              <Icons.calender className="size-4" />
               <time dateTime={post.published_timestamp}>
                 {formatDate(post.published_timestamp)}
               </time>
@@ -41,14 +41,14 @@ export const BlogPost = ({ post }: { post: IPost }) => (
 
             {post.reading_time_minutes && (
               <div className="flex items-center gap-1.5">
-                <Clock className="size-4" />
+                <Icons.clock className="size-4" />
                 <span>{post.reading_time_minutes} min read</span>
               </div>
             )}
 
             {post.page_views_count && post.page_views_count > 0 && (
               <div className="flex items-center gap-1.5">
-                <Eye className="size-4" />
+                <Icons.eye className="size-4" />
                 <span>
                   {post.page_views_count.toLocaleString()}{" "}
                   {post.page_views_count === 1 ? "view" : "views"}

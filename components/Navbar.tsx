@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Home, Contact, PenLine } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -14,14 +13,15 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import { Icons } from "./Icons";
 
 const navLinks = [
-  { label: "Home", href: "/", icon: Home },
-  { label: "Blog", href: "/blog", icon: PenLine },
+  { label: "Home", href: "/", icon: Icons.home },
+  { label: "Blog", href: "/blog", icon: Icons.blog },
   {
     label: "Contact",
     href: "/contact",
-    icon: Contact,
+    icon: Icons.contact,
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Navbar() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="relative sm:hidden">
             <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
+              <Icons.menu className="h-5 w-5" />
               <span className="sr-only">More</span>
             </Button>
           </DropdownMenuTrigger>

@@ -10,10 +10,13 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
 import Section from "./Section";
+import { Button } from "./ui/button";
+import { Icons } from "./Icons";
 
 export default function Projects() {
   return (
@@ -24,11 +27,13 @@ export default function Projects() {
       showActionBtn
       externalLink
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {projects.map((project) => (
-          <Project {...project} key={project.title} />
+          <li key={project.title}>
+            <Project {...project} />
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }
@@ -37,12 +42,14 @@ const Project = ({
   title,
   description,
   imageSrc,
-  link,
+  github,
+  demo,
 }: {
   title: string;
   description: string;
   imageSrc: StaticImageData;
-  link: string;
+  github: string;
+  demo: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -61,31 +68,54 @@ const Project = ({
         opacity: opacityProgess,
       }}
     >
-      <Link
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`View ${title} project`}
-      >
-        <Card className="size-full overflow-hidden transition sm:hover:bg-secondary/40 border-dashed">
-          <CardHeader className="p-4 aspect-[16/9]">
+      <Card className="size-full overflow-hidden border-dashed">
+        <CardHeader className="p-4">
+          <div className="overflow-hidden rounded-md bg-muted relative aspect-video">
             <Image
               src={imageSrc}
               alt={title}
+              className="object-cover"
               quality={95}
-              className="object-cover size-full shadow-sm rounded-sm"
+              fill
+              sizes="(min-width: 1024px) 300px, (min-width: 768px) 400px, 100vw"
             />
-          </CardHeader>
-          <CardContent className="p-4 pt-0">
-            <CardTitle className="line-clamp-1 tracking-normal text-base">
-              {title}
-            </CardTitle>
-            <CardDescription className="line-clamp-2 leading-normal">
-              {description}
-            </CardDescription>
-          </CardContent>
-        </Card>
-      </Link>
+          </div>
+        </CardHeader>
+        <CardContent className="p-4 pt-0 space-y-1.5">
+          <CardTitle className="line-clamp-1 text-lg font-bold">
+            {title}
+          </CardTitle>
+          <CardDescription className="line-clamp-2">
+            {description}
+          </CardDescription>
+        </CardContent>
+        <CardFooter className="p-4 pt-0">
+          <div className="flex gap-2">
+            <Button size="sm" className="h-8 w-8 p-0" variant="ghost" asChild>
+              <Link
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} source code`}
+              >
+                <Icons.github className="size-4" />
+              </Link>
+            </Button>
+            {demo && (
+              <Button size="sm" className="h-8 w-8 p-0" variant="ghost" asChild>
+                <Link
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${title} live demo`}
+                >
+                  <Icons.link className="size-4" />
+                </Link>
+              </Button>
+            )}
+          </div>
+        </CardFooter>
+      </Card>
     </motion.div>
   );
 };

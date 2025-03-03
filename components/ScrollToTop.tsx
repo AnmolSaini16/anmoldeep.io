@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronUp } from "lucide-react";
 
 import { Button } from "./ui/button";
+import { Icons } from "./Icons";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,8 +39,9 @@ export default function ScrollToTop() {
           variant="outline"
           className="fixed bottom-20 right-4 bg-background/75 hidden md:flex"
           onClick={scrollToTop}
+          aria-label="Scroll to top"
         >
-          <ChevronUp />
+          <Icons.arrowUp />
         </Button>
       )}
     </>

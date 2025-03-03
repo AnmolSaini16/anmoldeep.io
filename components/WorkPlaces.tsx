@@ -5,7 +5,7 @@ import { workplaces } from "@/config";
 import Avatar from "./Avatar";
 import Section from "./Section";
 import { Separator } from "./ui/separator";
-import { ExternalLink } from "lucide-react";
+import { Icons } from "./Icons";
 
 export async function WorkPlaces() {
   return (
@@ -70,7 +70,7 @@ const WorkPlace = ({
             className="group inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
           >
             {company}
-            <ExternalLink className="size-3.5 transition-transform sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+            <Icons.externalLink className="size-3.5 transition-transform sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
           </Link>
 
           <div className="flex items-center gap-2 text-muted-foreground text-sm">

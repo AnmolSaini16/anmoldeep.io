@@ -2,7 +2,6 @@
 
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/action";
+import { Icons } from "@/components/Icons";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -98,7 +98,7 @@ export default function ContactForm() {
 
           <Button className="group" disabled={loading} type="submit" size="lg">
             Let's talk
-            <Send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
+            <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
           </Button>
         </form>
       </CardContent>

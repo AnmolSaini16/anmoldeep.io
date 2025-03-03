@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Calendar, ChevronLeft, Clock } from "lucide-react";
 
 import { cn, formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { Icons } from "./Icons";
 
 type Props = {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
           asChild
         >
           <Link href="/blog">
-            <ChevronLeft className="mr-1 size-4 transition-transform group-hover:-translate-x-1" />
+            <Icons.arrowBack className="mr-1 size-4 transition-transform group-hover:-translate-x-1" />
             Back to blog
           </Link>
         </Button>
@@ -48,7 +48,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
-            <Calendar className="size-4" />
+            <Icons.calender className="size-4" />
             <time dateTime={post.published_timestamp}>
               {formatDate(post.published_timestamp)}
             </time>
@@ -56,7 +56,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
           {post?.reading_time_minutes && (
             <div className="flex items-center gap-1.5">
-              <Clock className="size-4" />
+              <Icons.clock className="size-4" />
               <span>{post.reading_time_minutes} min read</span>
             </div>
           )}
@@ -91,7 +91,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
         >
           <Link href={post.url} target="_blank" rel="noopener noreferrer">
             Found this interesting? Leave a like!
-            <ArrowUpRight className="size-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+            <Icons.arrowUpRight className="size-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
           </Link>
         </Button>
       </div>
