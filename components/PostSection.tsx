@@ -62,7 +62,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
           )}
         </div>
 
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
+        <h1 className="text-3xl font-bold tracking-tight text-primary">
           {post.title}
         </h1>
 
