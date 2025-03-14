@@ -46,7 +46,7 @@ export const BlogPost = ({ post }: { post: IPost }) => (
               </div>
             )}
 
-            {post.page_views_count && post.page_views_count > 0 && (
+            {post.page_views_count > 0 && (
               <div className="flex items-center gap-1.5">
                 <Icons.eye className="size-4" />
                 <span>
