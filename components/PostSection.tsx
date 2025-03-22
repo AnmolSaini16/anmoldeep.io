@@ -4,7 +4,6 @@ import Image from "next/image";
 import { cn, formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 import { Icons } from "./Icons";
 
 type Props = {
@@ -14,22 +13,7 @@ type Props = {
 
 const PostSection = ({ children, post, className, ...props }: Props) => {
   return (
-    <section className={cn("space-y-6", className)} {...props}>
-      {/* Back Button */}
-      <div>
-        <Button
-          size="sm"
-          variant="link"
-          className="group px-0 text-muted-foreground transition-colors hover:text-primary hover:no-underline"
-          asChild
-        >
-          <Link href="/blog">
-            <Icons.arrowBack className="mr-1 size-4 transition-transform group-hover:-translate-x-1" />
-            Back to blog
-          </Link>
-        </Button>
-      </div>
-
+    <section className={cn("flex flex-col gap-8", className)} {...props}>
       {/* Cover Image */}
       {post?.cover_image && (
         <div className="relative aspect-[21/9] overflow-hidden rounded-lg border bg-muted shadow-md hidden sm:block">
@@ -46,7 +30,10 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       {/* Post Header */}
       <div className="space-y-4">
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
+          {post.title}
+        </h1>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Icons.calender className="size-4" />
             <time dateTime={post.published_timestamp}>
@@ -61,20 +48,6 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
             </div>
           )}
         </div>
-
-        <h1 className="text-3xl font-bold tracking-tight text-primary">
-          {post.title}
-        </h1>
-
-        {post?.tags && (
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Article Content */}
