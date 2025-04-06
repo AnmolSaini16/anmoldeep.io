@@ -33,7 +33,7 @@ export const BlogPost = ({ post }: { post: IPost }) => (
         <CardFooter className="p-4 pt-0">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-1.5">
-              <Icons.calender className="size-4" />
+              <Icons.calender className="size-3.5" />
               <time dateTime={post.published_timestamp}>
                 {formatDate(post.published_timestamp)}
               </time>
@@ -41,7 +41,7 @@ export const BlogPost = ({ post }: { post: IPost }) => (
 
             {post.reading_time_minutes && (
               <div className="flex items-center gap-1.5">
-                <Icons.clock className="size-4" />
+                <Icons.clock className="size-3.5" />
                 <span>{post.reading_time_minutes} min read</span>
               </div>
             )}

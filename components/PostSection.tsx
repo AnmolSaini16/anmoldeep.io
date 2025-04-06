@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import { cn, formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
-import { Button } from "./ui/button";
 import { Icons } from "./Icons";
+import { Separator } from "./ui/separator";
 
 type Props = {
   children: React.ReactNode;
@@ -35,7 +34,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
         </h1>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
-            <Icons.calender className="size-4" />
+            <Icons.calender className="size-3.5" />
             <time dateTime={post.published_timestamp}>
               {formatDate(post.published_timestamp)}
             </time>
@@ -43,31 +42,19 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
           {post?.reading_time_minutes && (
             <div className="flex items-center gap-1.5">
-              <Icons.clock className="size-4" />
+              <Icons.clock className="size-3.5" />
               <span>{post.reading_time_minutes} min read</span>
             </div>
           )}
         </div>
       </div>
 
+      <Separator className="w-20 h-0.5" />
+
       {/* Article Content */}
       <article className="prose prose-gray dark:prose-invert">
         {children}
       </article>
-
-      {/* Call to Action */}
-      <div className="border-t pt-8">
-        <Button
-          variant="secondary"
-          className="group font-medium tracking-wide"
-          asChild
-        >
-          <Link href={post.url} target="_blank" rel="noopener noreferrer">
-            Found this interesting? Leave a like!
-            <Icons.arrowUpRight className="size-4 ml-1.5 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
-          </Link>
-        </Button>
-      </div>
     </section>
   );
 };
