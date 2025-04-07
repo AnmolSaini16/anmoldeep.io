@@ -28,7 +28,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       )}
 
       {/* Post Header */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
           {post.title}
         </h1>

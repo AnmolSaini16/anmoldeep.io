@@ -49,7 +49,7 @@ const Project = ({
   description: string;
   imageSrc: StaticImageData;
   github: string;
-  demo: string;
+  demo?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
