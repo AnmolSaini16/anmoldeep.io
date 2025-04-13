@@ -20,13 +20,13 @@ export default function CodeCopyButton({ code }: { code: string }) {
 
   return (
     <Button
-      className="absolute right-1.5 top-1.5 z-10 p-0 size-8 hover:bg-gray-400/20"
+      className="absolute right-1.5 top-1.5 z-10 p-0 size-8 transition-colors bg-neutral-800 hover:bg-neutral-700"
       variant="ghost"
       size="icon"
       onClick={handleCopy}
     >
       {copied ? (
-        <Check className="size-4 text-green-600" />
+        <Check className="size-4 text-emerald-500" />
       ) : (
         <Copy className="size-4 text-gray-400" />
       )}
