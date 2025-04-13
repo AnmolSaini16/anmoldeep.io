@@ -61,7 +61,9 @@ export default async function PostContentPage({
   return (
     <Shell className="max-w-[700px]">
       <PostSection post={post}>
-        <MarkdownComponent>{post.body_markdown}</MarkdownComponent>
+        <MarkdownComponent className="prose dark:prose-invert min-w-full">
+          {post.body_markdown}
+        </MarkdownComponent>
       </PostSection>
     </Shell>
   );

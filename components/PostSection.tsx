@@ -52,9 +52,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
       <Separator className="w-20 h-0.5" />
 
       {/* Article Content */}
-      <article className="prose prose-gray dark:prose-invert">
-        {children}
-      </article>
+      <article>{children}</article>
     </section>
   );
 };
