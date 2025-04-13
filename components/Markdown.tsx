@@ -5,6 +5,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Link from "next/link";
 
+import CodeCopyButton from "./CodeCopyButton";
+
 const MarkdownComponent = (props: Options) => {
   return (
     <Markdown
@@ -30,14 +32,17 @@ const CodeBlock = ({
 
   if (match) {
     return (
-      <SyntaxHighlighter
-        style={vscDarkPlus}
-        language={match[1]}
-        className="not-prose rounded-md"
-        wrapLines={true}
-      >
-        {codeString}
-      </SyntaxHighlighter>
+      <div className="relative not-prose">
+        <CodeCopyButton code={codeString} />
+        <SyntaxHighlighter
+          style={vscDarkPlus}
+          language={match[1]}
+          className="rounded-md"
+          wrapLines={true}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      </div>
     );
   }
 
