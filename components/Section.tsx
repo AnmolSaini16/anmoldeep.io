@@ -4,7 +4,6 @@ import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
 
 import { cn, inAnimation } from "@/lib/utils";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { Icons } from "./Icons";
 
@@ -27,40 +26,30 @@ const Section = ({
   externalLink = false,
   ...props
 }: Props) => {
-  const LinkIcon = externalLink ? Icons.externalLink : Icons.arrowUpRight;
   return (
     <motion.section
-      className={cn("w-full flex flex-col gap-6", className)}
+      className={cn("w-full flex flex-col gap-4", className)}
       {...props}
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={inAnimation.transition}
     >
-      <div className="flex items-center gap-4">
-        <h1 className="text-2xl font-bold tracking-tight shrink-0">
-          {heading}
-        </h1>
-        <div className="h-px flex-1 bg-border" />
-      </div>
+      <h1 className="text-lg font-bold tracking-tight shrink-0 text-primary">
+        {heading}
+      </h1>
 
       <div className="flex-grow">{children}</div>
 
       {showActionBtn && href && linkText && (
-        <Button
-          variant="ghost"
-          size="sm"
-          className="group inline-flex items-center w-fit mx-auto gap-1.5 tracking-wide"
-          asChild
+        <Link
+          href={href}
+          target={externalLink ? "_blank" : "_self"}
+          rel={externalLink ? "noopener noreferrer" : undefined}
+          className="mt-1 mx-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors group"
         >
-          <Link
-            href={href}
-            target={externalLink ? "_blank" : "_self"}
-            rel={externalLink ? "noopener noreferrer" : undefined}
-          >
-            {linkText}
-            <LinkIcon className="size-4 text-muted-foreground transition-all sm:group-hover:text-primary sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
-          </Link>
-        </Button>
+          {linkText}
+          <Icons.arrowUpRight className="size-3.5  transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
       )}
     </motion.section>
   );

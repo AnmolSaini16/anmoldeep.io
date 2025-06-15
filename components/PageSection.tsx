@@ -27,7 +27,7 @@ function PageHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h1 className={cn("text-3xl font-bold", className)} {...props} />;
+  return <h1 className={cn("text-2xl font-bold", className)} {...props} />;
 }
 
 function PageDescription({
@@ -36,7 +36,7 @@ function PageDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-base sm:text-lg text-muted-foreground", className)}
+      className={cn("text-base text-muted-foreground", className)}
       {...props}
     />
   );
@@ -48,7 +48,7 @@ function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
       initial={inAnimation.initial}
       animate={inAnimation.animate}
       transition={{ ...inAnimation.transition, delay: 0.12 }}
-      className="w-full flex-grow pt-6"
+      className="w-full flex-grow pt-8"
       {...props}
     />
   );

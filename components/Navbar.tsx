@@ -29,25 +29,23 @@ export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-16 sm:h-20 z-[999]">
-      <nav className="container max-w-[700px] size-full flex items-center justify-between">
+    <header className="h-20 sm:h-24 z-[999] bg-background top-0">
+      <nav className="container max-w-[700px] size-full flex items-center justify-between relative">
+        <Link href="/" className="font-bold font-mono">
+          Anmol.
+        </Link>
+
         <ul className="items-center gap-6 relative hidden sm:flex">
           {navLinks.map(({ label, href }) => (
             <li key={label}>
               <Link
                 href={href}
-                className={`relative py-2.5 px-1 text-sm font-medium tracking-wide transition-colors ${
+                className={`relative py-2.5 text-sm font-medium tracking-wide transition-colors ${
                   href === path
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
                 }`}
               >
-                {href === path && (
-                  <motion.span
-                    layoutId="underline"
-                    className="absolute bottom-0 left-0 right-0 bg-primary w-full h-0.5 rounded"
-                  />
-                )}
                 {label}
               </Link>
             </li>
@@ -63,8 +61,8 @@ export default function Navbar() {
           </DropdownMenuTrigger>
           <DropdownMenuContent
             side="bottom"
-            align="start"
-            className="space-y-1 sm:hidden"
+            align="end"
+            className="space-y-1 sm:hidden z-[1000]"
           >
             {navLinks.map((link) => (
               <DropdownMenuItem
@@ -83,8 +81,6 @@ export default function Navbar() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-
-        <ThemeSwitcher />
       </nav>
     </header>
   );

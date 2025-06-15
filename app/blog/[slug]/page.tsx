@@ -5,7 +5,6 @@ import PostSection from "@/components/PostSection";
 import { getPost, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";
-import { Shell } from "@/components/Shell";
 import { siteConfig } from "@/config";
 
 export async function generateStaticParams() {
@@ -59,12 +58,12 @@ export default async function PostContentPage({
   }
 
   return (
-    <Shell className="max-w-[700px]">
+    <section>
       <PostSection post={post}>
         <MarkdownComponent className="prose dark:prose-invert min-w-full">
           {post.body_markdown}
         </MarkdownComponent>
       </PostSection>
-    </Shell>
+    </section>
   );
 }

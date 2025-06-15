@@ -7,7 +7,6 @@ import {
   PageHeading,
 } from "@/components/PageSection";
 import ContactForm from "./ContactForm";
-import { Shell } from "@/components/Shell";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <Shell className="max-w-[700px]">
+    <section>
       <PageSection>
         <PageHeading>Get in touch 🤙</PageHeading>
         <PageDescription>
@@ -27,6 +26,6 @@ export default function Contact() {
           <ContactForm />
         </PageContent>
       </PageSection>
-    </Shell>
+    </section>
   );
 }

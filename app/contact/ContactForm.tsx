@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,61 +46,55 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="border-dashed">
-      <CardContent className="mt-4">
-        <form className="grid gap-6" onSubmit={handleSubmit} ref={formRef}>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                name="senderName"
-                type="text"
-                required
-                maxLength={100}
-                placeholder="John Doe"
-                disabled={loading}
-                className="transition-colors focus-visible:ring-primary"
-              />
-            </div>
+    <form className="grid gap-6" onSubmit={handleSubmit} ref={formRef}>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            id="name"
+            name="senderName"
+            type="text"
+            required
+            maxLength={100}
+            placeholder="John Doe"
+            disabled={loading}
+            className="transition-colors focus-visible:ring-primary bg-secondary"
+          />
+        </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="senderEmail"
-                type="email"
-                required
-                maxLength={100}
-                placeholder="john@example.com"
-                disabled={loading}
-                className="transition-colors focus-visible:ring-primary"
-              />
-            </div>
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            name="senderEmail"
+            type="email"
+            required
+            maxLength={100}
+            placeholder="john@example.com"
+            disabled={loading}
+            className="transition-colors focus-visible:ring-primary bg-secondary"
+          />
+        </div>
+      </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              name="senderMessage"
-              placeholder="Your message here..."
-              required
-              maxLength={5000}
-              disabled={loading}
-              className="min-h-[150px] resize-y transition-colors focus-visible:ring-primary"
-            />
-            <p className="text-xs text-muted-foreground">
-              Maximum 5000 characters
-            </p>
-          </div>
+      <div className="space-y-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          name="senderMessage"
+          placeholder="Your message here..."
+          required
+          maxLength={5000}
+          disabled={loading}
+          className="min-h-[150px] resize-y transition-colors focus-visible:ring-primary bg-secondary"
+        />
+        <p className="text-xs text-muted-foreground">Maximum 5000 characters</p>
+      </div>
 
-          <Button className="group" disabled={loading} type="submit" size="lg">
-            Let's talk
-            <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
-          </Button>
-        </form>
-      </CardContent>
-    </Card>
+      <Button className="group" disabled={loading} type="submit" size="lg">
+        Let's talk
+        <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
+      </Button>
+    </form>
   );
 }

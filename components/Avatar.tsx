@@ -23,7 +23,13 @@ export default function Avatar({
         size === "xl" && "h-32 w-32 min-w-32"
       )}
     >
-      <Image src={src} alt={alt || ""} sizes={sizes ?? ""} fill />
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        sizes={sizes ?? ""}
+        fill
+        className="object-cover object-center"
+      />
     </div>
   );
 }

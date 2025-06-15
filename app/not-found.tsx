@@ -2,14 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Shell } from "@/components/Shell";
 
 export const metadata: Metadata = {
   title: "Not found",
 };
 
 const Custom404 = (): JSX.Element => (
-  <Shell variant="centered">
+  <section>
     <div className="flex items-center flex-col h-full gap-2">
       <iframe
         src="https://giphy.com/embed/8L0Pky6C83SzkzU55a"
@@ -28,7 +27,7 @@ const Custom404 = (): JSX.Element => (
         <Link href="/">Return to Home</Link>
       </Button>
     </div>
-  </Shell>
+  </section>
 );
 
 export default Custom404;

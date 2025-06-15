@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config";
-import ScrollToTop from "@/components/ScrollToTop";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
@@ -62,12 +62,13 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <Navbar />
 
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow max-w-[700px] mx-auto container pt-14 pb-20">
+              {children}
+            </main>
 
             <Footer />
-
-            <ScrollToTop />
           </div>
+          <ThemeSwitcher />
         </ThemeProvider>
         <Toaster />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ""} />

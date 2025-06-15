@@ -11,7 +11,7 @@ export async function WorkPlaces() {
   return (
     <Section heading="Work">
       <div className="space-y-8">
-        <p className="leading-relaxed">
+        <p className="leading-relaxed text-muted-foreground">
           I specialize in web development, with expertise in JavaScript,
           TypeScript, React, Next.js, Node.js, Databases, HTML, CSS, and UI/UX.
           Here are some of the places I've worked:
@@ -60,17 +60,17 @@ const WorkPlace = ({
       </div>
 
       <div className="flex-grow space-y-3">
-        <div className="space-y-1">
-          <h3 className="font-semibold text-lg leading-none">{title}</h3>
+        <div className="space-y-1.5">
+          <h3 className="font-semibold leading-none text-primary">{title}</h3>
 
           <Link
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
+            className="group inline-flex items-center gap-1 text-primary text-sm font-medium"
           >
             {company}
-            <Icons.externalLink className="size-3.5 transition-transform sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+            <Icons.arrowUpRight className="size-3.5 text-muted-foreground group-hover:text-primary transition-all sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
           </Link>
 
           <div className="flex items-center gap-2 text-muted-foreground text-sm">

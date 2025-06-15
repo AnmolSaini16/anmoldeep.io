@@ -2,11 +2,10 @@ import { WorkPlaces } from "@/components/WorkPlaces";
 import Projects from "@/components/Projects";
 import Intro from "@/components/Intro";
 import About from "@/components/About";
-import { Shell } from "@/components/Shell";
 
 export default function Home() {
   return (
-    <Shell className="max-w-[700px]">
+    <section className="flex flex-col gap-20">
       <Intro />
 
       <About />
@@ -14,6 +13,6 @@ export default function Home() {
       <WorkPlaces />
 
       <Projects />
-    </Shell>
+    </section>
   );
 }

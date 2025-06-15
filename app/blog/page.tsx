@@ -2,7 +2,6 @@ import React from "react";
 import { Metadata } from "next";
 
 import { getPosts } from "@/lib/action";
-import { Shell } from "@/components/Shell";
 import {
   PageSection,
   PageHeading,
@@ -21,7 +20,7 @@ export default async function Blog() {
   const posts = await getPosts();
 
   return (
-    <Shell className="max-w-[700px]">
+    <section>
       <PageSection>
         <PageHeading>Blog ✍️</PageHeading>
         <PageDescription>
@@ -38,6 +37,6 @@ export default async function Blog() {
           </ul>
         </PageContent>
       </PageSection>
-    </Shell>
+    </section>
   );
 }

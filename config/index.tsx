@@ -25,12 +25,6 @@ export const socialLinks = [
     href: "https://www.instagram.com/anmol_saini16/",
     icon: Icons.instagram,
   },
-
-  {
-    label: "Mail",
-    href: "mailto:sainianmol16@gmail.com",
-    icon: Icons.mail,
-  },
 ];
 
 export const workplaces = [

@@ -82,7 +82,7 @@ const Project = ({
           </div>
         </CardHeader>
         <CardContent className="p-4 pt-0 space-y-1.5">
-          <CardTitle className="line-clamp-1 text-lg font-bold">
+          <CardTitle className="line-clamp-1 text-base font-bold">
             {title}
           </CardTitle>
           <CardDescription className="line-clamp-2">
