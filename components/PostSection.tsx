@@ -19,7 +19,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
     >
       <Link
         href="/blog"
-        className="hidden lg:flex absolute -left-20 top-0 gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group"
+        className="hidden lg:flex items-center absolute -left-24 top-0 gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group"
       >
         <Icons.arrowLeft className="size-3.5 transition-all group-hover:-translate-x-0.5" />
         <span>Blog</span>

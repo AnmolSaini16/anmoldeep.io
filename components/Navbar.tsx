@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
-import ThemeSwitcher from "./ThemeSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,7 +38,7 @@ export default function Navbar() {
             <li key={label}>
               <Link
                 href={href}
-                className={`relative py-2.5 text-sm font-medium tracking-wide transition-colors ${
+                className={`relative text-sm font-medium tracking-wide transition-colors ${
                   href === path
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
