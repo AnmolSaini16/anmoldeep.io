@@ -10,7 +10,7 @@ export const BlogPost = ({ post }: { post: IPost }) => (
     className="group"
   >
     <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm py-2 border-b border-muted-foreground/10 group-hover:border-primary/40 transition-all">
-      <span className="text-muted-foreground text-left min-w-[50px] mb-1 sm:mb-0 sm:mr-4 group-hover:text-primary">
+      <span className="text-muted-foreground text-left min-w-[50px] mb-1 sm:mb-0 sm:mr-4 group-hover:text-primary transition-colors">
         {formatDate(post.published_timestamp)}
       </span>
 

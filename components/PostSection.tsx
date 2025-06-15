@@ -44,9 +44,9 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
           {post.title}
         </h1>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
-            <Icons.calendar className="size-3.5" />
+            <Icons.calendar className="size-3" />
             <time dateTime={post.published_timestamp}>
               {formatDate(post.published_timestamp, {
                 month: "short",
@@ -56,9 +56,11 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
             </time>
           </div>
 
+          <div className="size-1 bg-muted-foreground rounded-full" />
+
           {post?.reading_time_minutes && (
             <div className="flex items-center gap-1.5">
-              <Icons.clock className="size-3.5" />
+              <Icons.clock className="size-3" />
               <span>{post.reading_time_minutes} min read</span>
             </div>
           )}
