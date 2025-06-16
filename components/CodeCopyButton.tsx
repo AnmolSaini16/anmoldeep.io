@@ -20,7 +20,7 @@ export default function CodeCopyButton({ code }: { code: string }) {
 
   return (
     <Button
-      className="absolute right-1.5 top-1.5 z-10 p-0 size-8 transition-colors bg-neutral-800 hover:bg-neutral-700"
+      className="absolute right-1.5 top-1.5 p-0 size-8 transition-colors bg-neutral-800 hover:bg-neutral-700"
       variant="ghost"
       size="icon"
       onClick={handleCopy}
