@@ -5,22 +5,22 @@ export default function About() {
     <Section heading="About">
       <div className="space-y-4 leading-relaxed text-muted-foreground">
         <p>
-          I've been immersed in the world of coding for{" "}
+          I&apos;ve been immersed in the world of coding for more than{" "}
           {new Date().getFullYear() - 2022} years now. It all started during my
           third year of college when I discovered my passion for Web
-          Development, and since then, there's been no turning back.
+          Development, and since then, there&apos;s been no turning back.
         </p>
 
         <p>
-          I've honed my skills as a software engineer, specializing in
+          I&apos;ve honed my skills as a software engineer, specializing in
           full-stack web development. Crafting websites and applications is not
-          just my job; it's my calling, and I pour my heart into every project I
-          undertake.
+          just my job; it&apos;s my calling, and I pour my heart into every
+          project I undertake.
         </p>
 
         <p>
-          When I&apos;m not glued to my desk, you'll likely find me at the gym,
-          cycling, reading blogs/books 😊.
+          When I&apos;m not glued to my desk, you&apos;ll likely find me at the
+          gym, cycling, reading blogs/books 😊.
         </p>
       </div>
     </Section>
