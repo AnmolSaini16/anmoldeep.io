@@ -28,7 +28,7 @@ export default async function Blog() {
           curiosity.
         </PageDescription>
         <PageContent>
-          <ul className="grid gap-6 grid-cols-1">
+          <ul className="flex flex-col gap-6">
             {posts?.map((post) => (
               <li key={post.id}>
                 <BlogPost post={post} />

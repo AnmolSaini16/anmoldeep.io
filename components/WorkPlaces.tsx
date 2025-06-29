@@ -70,7 +70,7 @@ const WorkPlace = ({
             className="group inline-flex items-center gap-1 text-primary text-sm font-medium"
           >
             {company}
-            <Icons.arrowUpRight className="size-3.5 text-muted-foreground group-hover:text-primary transition-all sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
+            <Icons.arrowUpRight className="size-3.5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </Link>
 
           <div className="flex items-center gap-2 text-muted-foreground text-sm">

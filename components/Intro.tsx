@@ -67,10 +67,10 @@ export default function Intro() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors group"
+              className="inline-flex items-center text-sm gap-1 text-muted-foreground hover:text-primary transition-colors group"
             >
               <span>{link.label}</span>
-              <Icons.arrowUpRight className="size-4 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <Icons.arrowUpRight className="size-3.5 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </motion.div>
         ))}

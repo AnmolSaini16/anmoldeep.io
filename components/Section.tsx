@@ -48,7 +48,7 @@ const Section = ({
           className="mt-1 mx-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors group"
         >
           {linkText}
-          <Icons.arrowUpRight className="size-3.5  transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <Icons.arrowUpRight className="size-3.5 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       )}
     </motion.section>

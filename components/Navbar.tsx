@@ -27,7 +27,7 @@ export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-20 sm:h-24 z-[999] bg-background top-0">
+    <header className="h-20 sm:h-24 z-[999]">
       <nav className="container max-w-[700px] size-full flex items-center justify-between relative">
         <Link href="/" className="font-bold font-mono">
           Anmol.
@@ -65,7 +65,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <DropdownMenuItem
                 className={cn(
-                  "text-primary font-medium tracking-wide py-2",
+                  "text-primary tracking-wide py-2",
                   link.href === path && "bg-accent"
                 )}
                 key={link.label}

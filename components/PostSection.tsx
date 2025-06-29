@@ -13,16 +13,13 @@ type Props = {
 
 const PostSection = ({ children, post, className, ...props }: Props) => {
   return (
-    <section
-      className={cn("flex flex-col gap-8 relative", className)}
-      {...props}
-    >
+    <section className={cn("flex flex-col gap-8", className)} {...props}>
       <Link
         href="/blog"
-        className="hidden lg:flex items-center absolute -left-24 top-0 gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group"
+        className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group w-fit"
       >
         <Icons.arrowLeft className="size-3.5 transition-all group-hover:-translate-x-0.5" />
-        <span>Blog</span>
+        <span>Back to Blog</span>
       </Link>
 
       {/* Cover Image */}
@@ -31,7 +28,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
           <Image
             src={post.cover_image}
             alt={post.title}
-            className="object-cover transition-transform duration-500 hover:scale-105"
+            className="object-cover"
             sizes="(min-width: 1024px) 900px, (min-width: 768px) 700px, 100vw"
             priority
             fill
