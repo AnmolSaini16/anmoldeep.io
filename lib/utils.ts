@@ -14,12 +14,6 @@ export const formatDate = (
     options ?? { month: "2-digit", year: "2-digit" }
   );
 
-export const inAnimation = {
-  initial: { y: 18, opacity: 0 },
-  animate: { y: 0, opacity: 1 },
-  transition: { duration: 0.4, ease: "easeOut" },
-};
-
 export const fetchFromDevToAPI = async <T>(
   url: string
 ): Promise<T | undefined> => {

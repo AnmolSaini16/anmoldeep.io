@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import {
@@ -23,19 +24,48 @@ const navLinks = [
   },
 ];
 
+const listVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.12 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function Navbar() {
   const path = `/${usePathname().split("/")[1]}`;
 
   return (
-    <header className="h-20 sm:h-24 z-[999]">
+    <motion.header
+      className="h-20 sm:h-24 z-[999]"
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <nav className="container max-w-[700px] size-full flex items-center justify-between relative">
-        <Link href="/" className="font-bold font-mono">
-          Anmol.
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.05 }}
+        >
+          <Link href="/" className="font-bold font-mono">
+            Anmol.
+          </Link>
+        </motion.div>
 
-        <ul className="items-center gap-6 relative hidden sm:flex">
+        <motion.ul
+          className="items-center gap-6 relative hidden sm:flex"
+          initial="hidden"
+          animate="show"
+          variants={listVariants}
+        >
           {navLinks.map(({ label, href }) => (
-            <li key={label}>
+            <motion.li key={label} variants={itemVariants}>
               <Link
                 href={href}
                 className={`relative text-sm font-medium tracking-wide transition-colors ${
@@ -46,9 +76,9 @@ export default function Navbar() {
               >
                 {label}
               </Link>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="relative sm:hidden">
@@ -80,6 +110,6 @@ export default function Navbar() {
           </DropdownMenuContent>
         </DropdownMenu>
       </nav>
-    </header>
+    </motion.header>
   );
 }

@@ -40,7 +40,7 @@ export default function ThemeSwitcher() {
   return (
     <div
       className={cn(
-        "fixed right-5 bottom-4 flex h-8 max-w-8 overflow-hidden rounded-full p-1 ring-1 ring-border transition-all gap-1 backdrop-blur-sm",
+        "fixed right-5 bottom-4 flex h-8 max-w-8 overflow-hidden rounded-full p-1 ring-1 ring-border transition-all gap-1 backdrop-blur",
         "hover:max-w-[120px]",
         theme === "system" && "justify-start",
         theme === "light" && "justify-center",

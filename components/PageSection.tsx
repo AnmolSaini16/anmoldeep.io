@@ -3,7 +3,7 @@
 import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
 
-import { cn, inAnimation } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 function PageSection({
   children,
@@ -12,9 +12,9 @@ function PageSection({
 }: HTMLMotionProps<"section">) {
   return (
     <motion.section
-      initial={inAnimation.initial}
-      animate={inAnimation.animate}
-      transition={inAnimation.transition}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
       className={cn("space-y-1.5", className)}
       {...props}
     >
@@ -45,9 +45,9 @@ function PageDescription({
 function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
   return (
     <motion.div
-      initial={inAnimation.initial}
-      animate={inAnimation.animate}
-      transition={{ ...inAnimation.transition, delay: 0.12 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.12 }}
       className="w-full flex-grow pt-8"
       {...props}
     />

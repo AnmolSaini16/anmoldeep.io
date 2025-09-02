@@ -1,6 +1,7 @@
 import optymLogo from "@/public/work-place/optym.jpeg";
 import easyPoll from "@/public/project/easy-poll.png";
 import nextMaps from "@/public/project/next-maps.png";
+import tableForge from "@/public/project/table-forge.png";
 
 import { Icons } from "@/components/Icons";
 
@@ -62,19 +63,19 @@ export const workplaces = [
 
 export const projects = [
   {
+    title: "Table Forge",
+    description:
+      "Beautiful, reusable table components built with Tailwind CSS and modern UI",
+    imageSrc: tableForge,
+    github: "https://github.com/AnmolSaini16/table-forge",
+    demo: "https://table-forge-one.vercel.app/",
+  },
+  {
     title: "Next Maps",
     description:
       "A beautifully designed modern map built with Next.js, Mapbox, and Shadcn/UI.",
     imageSrc: nextMaps,
     github: "https://github.com/AnmolSaini16/next-maps",
-  },
-  {
-    title: "Easy Poll",
-    description:
-      "Create instant, real-time polls with a clean UI — free and easy to use!",
-    imageSrc: easyPoll,
-    github: "https://github.com/AnmolSaini16/easy-poll",
-    demo: "https://easy-poll-time.vercel.app/",
   },
 ];
 

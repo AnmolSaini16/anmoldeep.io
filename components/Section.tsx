@@ -3,7 +3,7 @@
 import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
 
-import { cn, inAnimation } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Icons } from "./Icons";
 
@@ -30,13 +30,13 @@ const Section = ({
     <motion.section
       className={cn("w-full flex flex-col gap-4", className)}
       {...props}
-      initial={inAnimation.initial}
-      animate={inAnimation.animate}
-      transition={inAnimation.transition}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
     >
-      <h1 className="text-lg font-bold tracking-tight shrink-0 text-primary">
+      <h2 className="text-lg font-bold tracking-tight shrink-0 text-primary">
         {heading}
-      </h1>
+      </h2>
 
       <div className="flex-grow">{children}</div>
 
