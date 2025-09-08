@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import PostSection from "@/components/section/PostSection";
 import { getPost, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
-import MarkdownComponent from "@/components/Markdown";
+import MarkdownComponent from "@/components/markdown/Markdown";
 import { siteConfig } from "@/config";
 
 export async function generateStaticParams() {

@@ -1,39 +1,18 @@
-"use client";
-
+import { memo } from "react";
 import Markdown, { Options } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSanitize from "rehype-sanitize";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  oneDark,
-  oneLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Link from "next/link";
 
 import CodeCopyButton from "./CodeCopyButton";
-import { useTheme } from "next-themes";
-
-const MarkdownComponent = (props: Options) => {
-  return (
-    <Markdown
-      {...props}
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeSanitize]}
-      components={{
-        a: CustomLink,
-        pre: CustomPre,
-        code: CodeBlock,
-      }}
-    />
-  );
-};
 
 const CodeBlock = ({
   className,
   children,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
-  const { resolvedTheme } = useTheme();
   const match = /language-(\w+)/.exec(className || "");
   const codeString = String(children).trim();
 
@@ -42,7 +21,7 @@ const CodeBlock = ({
       <div className="not-prose relative">
         <CodeCopyButton code={codeString} />
         <SyntaxHighlighter
-          style={resolvedTheme === "dark" ? oneDark : oneLight}
+          style={vscDarkPlus}
           language={match[1]}
           className="rounded-md"
         >
@@ -81,4 +60,23 @@ const CustomLink = ({
   ) : null;
 };
 
-export default MarkdownComponent;
+const remarkPluginsList = [remarkGfm];
+const rehypePluginsList = [rehypeSanitize];
+const componentsMap = {
+  a: CustomLink,
+  pre: CustomPre,
+  code: CodeBlock,
+};
+
+const MarkdownComponent = (props: Options) => {
+  return (
+    <Markdown
+      {...props}
+      remarkPlugins={remarkPluginsList}
+      rehypePlugins={rehypePluginsList}
+      components={componentsMap}
+    />
+  );
+};
+
+export default memo(MarkdownComponent);
