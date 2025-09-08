@@ -40,11 +40,11 @@ export default function ThemeSwitcher() {
   return (
     <div
       className={cn(
-        "fixed right-5 bottom-4 flex h-8 max-w-8 overflow-hidden rounded-full p-1 ring-1 ring-border transition-all gap-1 backdrop-blur-sm",
+        "ring-border fixed right-5 bottom-4 flex h-8 max-w-8 gap-1 overflow-hidden rounded-full p-1 ring-1 backdrop-blur-sm transition-all",
         "hover:max-w-[120px]",
         theme === "system" && "justify-start",
         theme === "light" && "justify-center",
-        theme === "dark" && "justify-end"
+        theme === "dark" && "justify-end",
       )}
     >
       {themes.map(({ key, icon: Icon, label }) => {
@@ -61,14 +61,14 @@ export default function ThemeSwitcher() {
             {isActive && (
               <motion.div
                 layoutId="activeTheme"
-                className="absolute inset-0 rounded-full bg-secondary"
+                className="bg-secondary absolute inset-0 rounded-full"
                 transition={{ type: "spring", duration: 0.5 }}
               />
             )}
             <Icon
               className={cn(
                 "relative m-auto size-4",
-                isActive ? "text-primary" : "text-muted-foreground"
+                isActive ? "text-primary" : "text-muted-foreground",
               )}
             />
           </button>

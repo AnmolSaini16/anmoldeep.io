@@ -2,6 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
 
 @theme {
   --color-border: hsl(var(--border));
@@ -84,6 +85,7 @@
 }
 
 @layer base {
+  
   *,
   ::after,
   ::before,
