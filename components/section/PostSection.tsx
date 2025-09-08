@@ -3,8 +3,7 @@ import Link from "next/link";
 
 import { cn, formatDate } from "@/lib/utils";
 import { IPost } from "@/types";
-import { Icons } from "./Icons";
-import { Separator } from "./ui/separator";
+import { Icons } from "../Icons";
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
     <section className={cn("flex flex-col gap-8", className)} {...props}>
       <Link
         href="/blog"
-        className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group w-fit"
+        className="text-muted-foreground hover:text-primary group flex w-fit items-center gap-1.5 text-sm transition-colors"
       >
         <Icons.arrowLeft className="size-3.5 transition-all group-hover:-translate-x-0.5" />
         <span>Back to Blog</span>
@@ -24,7 +23,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       {/* Cover Image */}
       {post?.cover_image && (
-        <div className="relative aspect-[21/9] overflow-hidden rounded-lg border bg-muted shadow-md hidden sm:block">
+        <div className="bg-muted relative hidden aspect-21/9 overflow-hidden rounded-lg border shadow-md sm:block">
           <Image
             src={post.cover_image}
             alt={post.title}
@@ -38,10 +37,10 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
 
       {/* Post Header */}
       <div className="space-y-4">
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
+        <h1 className="text-primary text-3xl font-extrabold tracking-tight sm:text-4xl">
           {post.title}
         </h1>
-        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+        <div className="text-muted-foreground flex flex-wrap items-center gap-3 text-sm">
           <div className="flex items-center gap-1.5">
             <Icons.calendar className="size-3.5" />
             <time dateTime={post.published_timestamp}>
@@ -53,7 +52,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
             </time>
           </div>
 
-          <div className="size-1 bg-muted-foreground rounded-full" />
+          <div className="bg-muted-foreground size-1 rounded-full" />
 
           {Boolean(post?.reading_time_minutes) && (
             <div className="flex items-center gap-1.5">
@@ -64,7 +63,7 @@ const PostSection = ({ children, post, className, ...props }: Props) => {
         </div>
       </div>
 
-      <Separator className="w-20 h-0.5" />
+      <div className="bg-muted h-0.5 w-20" />
 
       {/* Article Content */}
       <article>{children}</article>

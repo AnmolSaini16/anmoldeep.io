@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-import PostSection from "@/components/PostSection";
+import PostSection from "@/components/section/PostSection";
 import { getPost, getPosts } from "@/lib/action";
 import { IPost } from "@/types";
 import MarkdownComponent from "@/components/Markdown";

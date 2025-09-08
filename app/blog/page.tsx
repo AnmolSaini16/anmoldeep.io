@@ -7,7 +7,7 @@ import {
   PageHeading,
   PageDescription,
   PageContent,
-} from "@/components/PageSection";
+} from "@/components/section/PageSection";
 import { BlogPost } from "@/components/BlogPost";
 
 export const metadata: Metadata = {

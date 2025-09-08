@@ -48,7 +48,7 @@ function PageContent({ className, ...props }: HTMLMotionProps<"div">) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.12 }}
-      className="w-full flex-grow pt-8"
+      className="w-full grow pt-8"
       {...props}
     />
   );

@@ -1,5 +1,4 @@
 import optymLogo from "@/public/work-place/optym.jpeg";
-import easyPoll from "@/public/project/easy-poll.png";
 import nextMaps from "@/public/project/next-maps.png";
 import tableForge from "@/public/project/table-forge.png";
 
@@ -22,9 +21,9 @@ export const socialLinks = [
     icon: Icons.twitter,
   },
   {
-    label: "Instagram",
-    href: "https://www.instagram.com/anmol_saini16/",
-    icon: Icons.instagram,
+    label: "Mail",
+    href: "mailto:sainianmol16@gmail.com",
+    icon: Icons.mail,
   },
 ];
 

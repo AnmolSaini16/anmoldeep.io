@@ -5,7 +5,7 @@ import {
   PageContent,
   PageDescription,
   PageHeading,
-} from "@/components/PageSection";
+} from "@/components/section/PageSection";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {

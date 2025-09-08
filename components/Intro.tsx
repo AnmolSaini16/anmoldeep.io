@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 
 import profilePic from "@/public/profile.png";
-import Avatar from "@/components/Avatar";
+import Avatar from "@/components/ui/Avatar";
 import Link from "next/link";
-import { Icons } from "./Icons";
 import { socialLinks } from "@/config";
 
 export default function Intro() {
@@ -33,7 +32,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="leading-relaxed text-muted-foreground"
+        className="text-muted-foreground leading-relaxed"
       >
         I'm a software engineer with a passion for building web applications. I
         thrive on creating meaningful experiences through code and love bringing
@@ -41,7 +40,7 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex items-center gap-4 flex-wrap"
+        className="flex flex-wrap items-center gap-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.5 }}
@@ -63,10 +62,9 @@ export default function Intro() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="inline-flex items-center text-sm gap-1 text-muted-foreground hover:text-primary transition-colors group"
+              className="decoration-muted-foreground/50 hover:decoration-primary underline underline-offset-4 transition-colors"
             >
-              <span>{link.label}</span>
-              <Icons.arrowUpRight className="size-3.5 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {link.label}
             </Link>
           </motion.div>
         ))}

@@ -14,9 +14,8 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Section from "./Section";
-import { Button } from "./ui/button";
 import { Icons } from "./Icons";
+import Section from "./section/Section";
 
 export default function Projects() {
   return (
@@ -70,7 +69,7 @@ const Project = ({
     >
       <Card className="size-full overflow-hidden border-dashed">
         <CardHeader className="p-4">
-          <div className="overflow-hidden rounded-md bg-muted relative aspect-video">
+          <div className="bg-muted relative aspect-video overflow-hidden rounded-md">
             <Image
               src={imageSrc}
               alt={title}
@@ -81,7 +80,7 @@ const Project = ({
             />
           </div>
         </CardHeader>
-        <CardContent className="p-4 pt-0 space-y-1.5">
+        <CardContent className="space-y-1.5 p-4 pt-0">
           <CardTitle className="line-clamp-1 text-base font-bold">
             {title}
           </CardTitle>
@@ -91,27 +90,26 @@ const Project = ({
         </CardContent>
         <CardFooter className="p-4 pt-0">
           <div className="flex gap-2">
-            <Button size="sm" className="h-8 w-8 p-0" variant="ghost" asChild>
+            <Link
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${title} source code`}
+              className="hover:bg-accent inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors"
+            >
+              <Icons.github className="size-4" />
+            </Link>
+
+            {demo && (
               <Link
-                href={github}
+                href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`View ${title} source code`}
+                aria-label={`View ${title} live demo`}
+                className="hover:bg-accent inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors"
               >
-                <Icons.github className="size-4" />
+                <Icons.link className="size-4" />
               </Link>
-            </Button>
-            {demo && (
-              <Button size="sm" className="h-8 w-8 p-0" variant="ghost" asChild>
-                <Link
-                  href={demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${title} live demo`}
-                >
-                  <Icons.link className="size-4" />
-                </Link>
-              </Button>
             )}
           </div>
         </CardFooter>

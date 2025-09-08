@@ -5,12 +5,12 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/config";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
@@ -49,8 +49,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-background antialiased scroll-smooth min-h-screen",
-          GeistSans.className
+          "bg-background min-h-screen scroll-smooth antialiased",
+          GeistSans.className,
         )}
       >
         <ThemeProvider
@@ -59,10 +59,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
+          <div className="flex min-h-screen flex-col">
             <Navbar />
 
-            <main className="flex-grow max-w-[700px] mx-auto container pt-14 pb-20">
+            <main className="container mx-auto max-w-[700px] grow pt-14 pb-20">
               {children}
             </main>
 

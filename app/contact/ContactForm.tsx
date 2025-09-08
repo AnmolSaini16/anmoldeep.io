@@ -3,12 +3,10 @@
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/action";
 import { Icons } from "@/components/Icons";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -48,8 +46,13 @@ export default function ContactForm() {
   return (
     <form className="grid gap-6" onSubmit={handleSubmit} ref={formRef}>
       <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+        <div className="grid gap-3">
+          <label
+            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            htmlFor="name"
+          >
+            Name
+          </label>
           <Input
             id="name"
             name="senderName"
@@ -58,12 +61,17 @@ export default function ContactForm() {
             maxLength={100}
             placeholder="John Doe"
             disabled={loading}
-            className="transition-colors focus-visible:ring-primary bg-secondary"
+            className="focus-visible:ring-primary bg-secondary transition-colors"
           />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+        <div className="grid gap-3">
+          <label
+            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            htmlFor="email"
+          >
+            Email
+          </label>
           <Input
             id="email"
             name="senderEmail"
@@ -72,13 +80,18 @@ export default function ContactForm() {
             maxLength={100}
             placeholder="john@example.com"
             disabled={loading}
-            className="transition-colors focus-visible:ring-primary bg-secondary"
+            className="focus-visible:ring-primary bg-secondary transition-colors"
           />
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
+      <div className="grid gap-3">
+        <label
+          className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          htmlFor="message"
+        >
+          Message
+        </label>
         <Textarea
           id="message"
           name="senderMessage"
@@ -86,15 +99,19 @@ export default function ContactForm() {
           required
           maxLength={5000}
           disabled={loading}
-          className="min-h-[150px] resize-y transition-colors focus-visible:ring-primary bg-secondary"
+          className="focus-visible:ring-primary bg-secondary min-h-[150px] resize-y transition-colors"
         />
-        <p className="text-xs text-muted-foreground">Maximum 5000 characters</p>
+        <p className="text-muted-foreground text-xs">Maximum 5000 characters</p>
       </div>
 
-      <Button className="group" disabled={loading} type="submit" size="lg">
+      <button
+        disabled={loading}
+        type="submit"
+        className="group bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50"
+      >
         Let's talk
         <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
-      </Button>
+      </button>
     </form>
   );
 }

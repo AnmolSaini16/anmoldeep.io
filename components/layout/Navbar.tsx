@@ -4,15 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-import { cn } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { Icons } from "./Icons";
+import { Icons } from "../Icons";
 
 const navLinks = [
   { label: "Home", href: "/", icon: Icons.home },
@@ -42,24 +34,24 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className="h-20 sm:h-24 z-[999]"
+      className="z-999 h-20 sm:h-24"
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <nav className="container max-w-[700px] size-full flex items-center justify-between relative">
+      <nav className="relative container flex size-full max-w-[700px] items-center justify-between">
         <motion.div
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, delay: 0.05 }}
         >
-          <Link href="/" className="font-bold font-mono">
+          <Link href="/" className="font-mono font-bold">
             Anmol.
           </Link>
         </motion.div>
 
         <motion.ul
-          className="items-center gap-6 relative hidden sm:flex"
+          className="relative flex items-center gap-6"
           initial="hidden"
           animate="show"
           variants={listVariants}
@@ -79,36 +71,6 @@ export default function Navbar() {
             </motion.li>
           ))}
         </motion.ul>
-
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild className="relative sm:hidden">
-            <Button variant="ghost" size="icon">
-              <Icons.menu className="h-5 w-5" />
-              <span className="sr-only">More</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            side="bottom"
-            align="end"
-            className="space-y-1 sm:hidden z-[1000]"
-          >
-            {navLinks.map((link) => (
-              <DropdownMenuItem
-                className={cn(
-                  "text-primary tracking-wide py-2",
-                  link.href === path && "bg-accent"
-                )}
-                key={link.label}
-                asChild
-              >
-                <Link href={link.href}>
-                  <link.icon className="w-4 h-4 mr-2" />
-                  <span>{link.label}</span>
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
       </nav>
     </motion.header>
   );
