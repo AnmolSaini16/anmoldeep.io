@@ -2,7 +2,7 @@
 
 - Next.Js
 - Framer Motion
-- UI built with Tailwind CSS
+- Tailwind CSS
 - Resend
 - Dev.to API
 - Vercel Deployment
