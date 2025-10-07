@@ -1,4 +1,4 @@
-## [anmoldeep.app](https://anmoldeep.dev)
+## [anmoldeep.dev](https://anmoldeep.dev)
 
 - Next.Js
 - Framer Motion
