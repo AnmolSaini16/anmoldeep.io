@@ -1,11 +1,6 @@
 import { Metadata } from "next";
 
-import {
-  PageSection,
-  PageContent,
-  PageDescription,
-  PageHeading,
-} from "@/components/section/PageSection";
+import AnimatedSection from "@/components/section/AnimatedSection";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -16,16 +11,16 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <section>
-      <PageSection>
-        <PageHeading>Get in touch 🤙</PageHeading>
-        <PageDescription>
-          Have a question or want to work together? I'd love to hear from you.
-        </PageDescription>
-        <PageContent>
-          <ContactForm />
-        </PageContent>
-      </PageSection>
-    </section>
+    <AnimatedSection className="space-y-1.5">
+      <h1 className="text-2xl font-bold">Get in touch</h1>
+
+      <p className="text-muted-foreground">
+        Have a question or want to work together? I'd love to hear from you.
+      </p>
+
+      <AnimatedSection delay={0.15} className="pt-8" component="div">
+        <ContactForm />
+      </AnimatedSection>
+    </AnimatedSection>
   );
 }

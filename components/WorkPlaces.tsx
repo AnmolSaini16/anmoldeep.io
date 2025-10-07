@@ -3,11 +3,12 @@ import { StaticImageData } from "next/image";
 
 import { workplaces } from "@/config";
 import Avatar from "./ui/Avatar";
-import Section from "./section/Section";
+import AnimatedSection from "./section/AnimatedSection";
 
 export async function WorkPlaces() {
   return (
-    <Section heading="Work">
+    <AnimatedSection className="space-y-4" delay={0.35}>
+      <h2 className="text-primary text-lg font-bold tracking-tight">Work</h2>
       <div className="space-y-8">
         <p className="text-muted-foreground leading-relaxed">
           I specialize in web development, with expertise in JavaScript,
@@ -24,7 +25,7 @@ export async function WorkPlaces() {
           ))}
         </ul>
       </div>
-    </Section>
+    </AnimatedSection>
   );
 }
 
@@ -54,7 +55,9 @@ const WorkPlace = ({
           <Avatar src={imageSrc} alt={company} sizes="40px" />
         </div>
 
-        {!isLast && <div className="bg-muted w-px flex-1" />}
+        {!isLast && (
+          <div className="w-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+        )}
       </div>
 
       <div className="grow">

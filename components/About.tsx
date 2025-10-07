@@ -1,8 +1,9 @@
-import Section from "./section/Section";
+import AnimatedSection from "./section/AnimatedSection";
 
 export default function About() {
   return (
-    <Section heading="About">
+    <AnimatedSection className="space-y-4" delay={0.25}>
+      <h2 className="text-lg font-bold tracking-tight">About</h2>
       <div className="text-muted-foreground space-y-4 leading-relaxed">
         <p>
           I&apos;ve been immersed in the world of coding for more than{" "}
@@ -23,6 +24,6 @@ export default function About() {
           gym, swimming, reading blogs/books 😊.
         </p>
       </div>
-    </Section>
+    </AnimatedSection>
   );
 }

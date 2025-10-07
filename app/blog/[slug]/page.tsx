@@ -58,12 +58,10 @@ export default async function PostContentPage({
   }
 
   return (
-    <section>
-      <PostSection post={post}>
-        <MarkdownComponent className="prose dark:prose-invert min-w-full">
-          {post.body_markdown}
-        </MarkdownComponent>
-      </PostSection>
-    </section>
+    <PostSection post={post}>
+      <MarkdownComponent className="prose dark:prose-invert min-w-full">
+        {post.body_markdown}
+      </MarkdownComponent>
+    </PostSection>
   );
 }

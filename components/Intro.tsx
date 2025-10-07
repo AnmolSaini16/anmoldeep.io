@@ -6,45 +6,24 @@ import profilePic from "@/public/profile.png";
 import Avatar from "@/components/ui/Avatar";
 import Link from "next/link";
 import { socialLinks } from "@/config";
+import AnimatedSection from "./section/AnimatedSection";
 
 export default function Intro() {
   return (
-    <section className="flex flex-col gap-3">
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="pb-1"
-      >
-        <Avatar src={profilePic} alt="Anmoldeep Singh" size="md" sizes="80px" />
-      </motion.div>
+    <AnimatedSection className="flex flex-col gap-3">
+      <Avatar src={profilePic} alt="Anmoldeep Singh" size="md" sizes="80px" />
 
-      <motion.h1
-        className="text-3xl font-semibold tracking-tight"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.05 }}
-      >
+      <h1 className="mt-1 text-3xl font-semibold tracking-tight">
         Anmoldeep Singh
-      </motion.h1>
+      </h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        className="text-muted-foreground leading-relaxed"
-      >
+      <p className="text-muted-foreground leading-relaxed">
         I'm a software engineer with a passion for building web applications. I
         thrive on creating meaningful experiences through code and love bringing
         ideas to life!
-      </motion.p>
+      </p>
 
-      <motion.div
-        className="flex flex-wrap items-center gap-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-      >
+      <div className="flex flex-wrap items-center gap-6">
         {socialLinks.map((link, index) => (
           <motion.div
             key={link.label}
@@ -68,7 +47,7 @@ export default function Intro() {
             </Link>
           </motion.div>
         ))}
-      </motion.div>
-    </section>
+      </div>
+    </AnimatedSection>
   );
 }

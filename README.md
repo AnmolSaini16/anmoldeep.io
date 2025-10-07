@@ -1,4 +1,4 @@
-## [anmoldeep.app](https://anmoldeep.vercel.app/)
+## [anmoldeep.app](https://anmoldeep.dev)
 
 - Next.Js
 - Framer Motion

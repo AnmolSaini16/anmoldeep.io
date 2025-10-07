@@ -12,31 +12,25 @@ export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sendEmailPromise = async (formData: FormData) => {
-    setLoading(true);
-
-    try {
-      const { error } = await sendEmail(formData);
-
-      if (error) {
-        throw new Error(error.message);
-      } else {
-        formRef.current?.reset();
-      }
-    } catch (error) {
-      console.error(error);
-      throw new Error();
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
 
-    toast.promise(sendEmailPromise(formData), {
+    const sendEmailPromise = async () => {
+      setLoading(true);
+      try {
+        const { error } = await sendEmail(formData);
+        if (error) {
+          throw new Error();
+        }
+        formRef.current?.reset();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    toast.promise(sendEmailPromise(), {
       loading: "Sending message...",
       error: "Something went wrong",
       success: "Message sent successfully!",
@@ -110,7 +104,7 @@ export default function ContactForm() {
         className="group bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50"
       >
         Let's talk
-        <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-1 sm:group-hover:-translate-y-1" />
+        <Icons.send className="ml-2 size-4 transition-transform duration-200 sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
       </button>
     </form>
   );

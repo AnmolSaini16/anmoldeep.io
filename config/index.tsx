@@ -7,7 +7,7 @@ import { Icons } from "@/components/Icons";
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/anmoldeep-singh-51bb4b1b1/",
+    href: "https://www.linkedin.com/in/anmoldeep16/",
     icon: Icons.linkedin,
   },
   {
@@ -82,11 +82,11 @@ export const siteConfig = {
   name: "Anmoldeep Singh",
   description:
     "I am a Software Engineer specializing in web. I love to Build Things!",
-  url: "https://anmoldeep.vercel.app",
+  url: "https://anmoldeep.dev",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://anmoldeep.vercel.app",
+    url: "https://anmoldeep.dev",
     title: "Anmoldeep Singh",
     description:
       "I am a Software Engineer specializing in web. I love to Build Things!",

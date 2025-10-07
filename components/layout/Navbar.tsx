@@ -63,7 +63,7 @@ export default function Navbar() {
                 className={`relative text-sm font-medium tracking-wide transition-colors ${
                   href === path
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    : "text-muted-foreground/80 hover:text-primary"
                 }`}
               >
                 {label}

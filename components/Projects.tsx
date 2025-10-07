@@ -15,17 +15,12 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Icons } from "./Icons";
-import Section from "./section/Section";
+import AnimatedSection from "./section/AnimatedSection";
 
 export default function Projects() {
   return (
-    <Section
-      heading="Latest Projects"
-      linkText="Check out more on GitHub"
-      href="https://github.com/AnmolSaini16"
-      showActionBtn
-      externalLink
-    >
+    <AnimatedSection className="flex flex-col gap-4" delay={0.45}>
+      <h2 className="text-lg font-bold tracking-tight">Latest Projects</h2>
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {projects.map((project) => (
           <li key={project.title}>
@@ -33,7 +28,16 @@ export default function Projects() {
           </li>
         ))}
       </ul>
-    </Section>
+      <Link
+        href="https://github.com/AnmolSaini16"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-muted-foreground hover:text-primary group mx-auto mt-1 inline-flex items-center gap-1 text-sm transition-colors"
+      >
+        Check out more on GitHub
+        <Icons.arrowUpRight className="size-3.5 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      </Link>
+    </AnimatedSection>
   );
 }
 

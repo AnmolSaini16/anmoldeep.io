@@ -3,7 +3,7 @@
 import { Resend } from "resend";
 
 import { IPost } from "@/types";
-import { fetchFromDevToAPI } from "./utils";
+import { fetchFromDevToAPI, sanitizeHtml } from "./utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -15,7 +15,7 @@ export const getPosts = (params?: {
     : "";
 
   return fetchFromDevToAPI<IPost[]>(
-    `https://dev.to/api/articles/me/published${queryString}`
+    `https://dev.to/api/articles/me/published${queryString}`,
   );
 };
 
@@ -24,13 +24,17 @@ export const getPost = (slug: string): Promise<IPost | undefined> =>
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;
-  const senderName = formData.get("senderName");
-  const senderMessage = formData.get("senderMessage");
+  const senderName = formData.get("senderName") as string;
+  const senderMessage = formData.get("senderMessage") as string;
+
+  const sanitizedName = sanitizeHtml(senderName);
+  const sanitizedEmail = sanitizeHtml(senderEmail);
+  const sanitizedMessage = sanitizeHtml(senderMessage);
 
   const emailContent = `
   <p>Hi,</p>
-  <p>You have received a message from ${senderName}, (${senderEmail}):</p>
-  <p>${senderMessage}</p>
+  <p>You have received a message from ${sanitizedName}, (${sanitizedEmail}):</p>
+  <p>${sanitizedMessage}</p>
   <p>Regards,</p>
   <p>Contact Form</p>
 `;
